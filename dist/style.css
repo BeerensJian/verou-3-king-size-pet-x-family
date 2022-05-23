@@ -15,3 +15,7 @@ body {
 a, a:visited, a:active {
   text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
+
+h1 {
+  color: aqua;
+}
