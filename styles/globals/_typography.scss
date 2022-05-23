@@ -1,3 +1,19 @@
+:root {
+    --title-font:new-spirit, serif;
+    --text-font:Gill Sans Nova, 
+}
+
 a, a:visited, a:active {
     text-decoration: none;
+    color: black;
+}
+
+ul, ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+} 
+
+h1 {
+    font-family: var(--title-font);
 }
