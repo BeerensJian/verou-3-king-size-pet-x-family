@@ -5,13 +5,40 @@ html {
 
 *, *::before, *::after {
   box-sizing: inherit;
-}
-
-body {
   margin: 0;
   padding: 0;
 }
 
+body {
+  background-color: var(--background-color);
+}
+
+:root {
+  --title-font:new-spirit, serif;
+  --text-font:Gill Sans Nova, ;
+}
+
 a, a:visited, a:active {
   text-decoration: none;
+  color: black;
+}
+
+ul, ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: var(--title-font);
+}
+
+:root {
+  --background-color:hsl(80,91%,58%);
+  --light-gray:#e6e6e6;
+}
+
+.nav__list {
+  background-color: var(--light-gray);
+  border: 1px solid black;
 }/*# sourceMappingURL=style.css.map */
