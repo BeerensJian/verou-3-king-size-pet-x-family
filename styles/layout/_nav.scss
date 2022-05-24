@@ -1,4 +1,30 @@
-.nav__list {
+nav{
+    width: 100vw;
     background-color: var(--light-gray);
-    border: 1px solid black;
+    border: 2px solid black;
+    padding: 10px;
+    .logo {
+        font-size: 35px;
+        color: #4d4d4d;
+    }
+    .nav__list {
+        font-size: large;
+        width: 85%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        & li { 
+            padding: 20px;
+        }
+        .nav__links {
+            display: flex; 
+        }
+        .nav__button {
+            font-weight: 600;
+            background-color: #b3b3b3;
+            padding: 10px 35px ;
+            border-radius: 20px;
+        }
+    }
 }
