@@ -9,6 +9,10 @@ html {
   padding: 0;
 }
 
+body {
+  width: 100vw;
+}
+
 :root {
   --title-font:new-spirit, serif;
   --text-font:Gill Sans Nova, sans serif;
@@ -38,8 +42,15 @@ p, li {
   --light-gray:#e6e6e6;
 }
 
+footer {
+  margin: 100px 0 0 0;
+  background-color: var(--light-gray);
+  width: 100%;
+  height: 70px;
+}
+
 nav {
-  width: 100vw;
+  width: 100%;
   background-color: var(--light-gray);
   border: 2px solid black;
   padding: 10px;
@@ -77,27 +88,44 @@ nav .nav__list .nav__button {
 .into {
   padding: 115px 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   align-items: center;
 }
 .into img {
   width: 100%;
-  max-width: 600px;
 }
 .into h2 {
   font-size: 40px;
 }
 
 .steps h2 {
+  padding: 20px 0 100px 0;
   text-align: center;
 }
 .steps__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+}
+.steps__container img {
+  max-width: 100%;
 }
 .steps div {
   display: grid;
   justify-items: center;
+  padding: 0 0 50px 0;
+}
+.steps div h3 {
+  padding: 40px 0 20px 0;
+}
+
+.call-to-action {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  align-items: center;
+}
+.call-to-action img {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
