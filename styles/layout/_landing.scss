@@ -1,0 +1,36 @@
+.container{
+    width: 80%;
+    margin: auto;
+}
+.into {
+    padding: 115px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    align-items: center;
+    img {
+        width: 100%;
+        max-width: 600px;
+    }
+   
+    h2 {
+        font-size: 40px;
+    } 
+}
+
+.steps {
+    h2 {
+        text-align: center;
+    }
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 20px;
+       
+    }
+    div {
+        display: grid;
+        justify-items: center;
+    }
+  
+}

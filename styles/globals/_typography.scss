@@ -1,6 +1,6 @@
 :root {
     --title-font:new-spirit, serif;
-    --text-font:Gill Sans Nova, 
+    --text-font:Gill Sans Nova, sans serif;
 }
 
 a, a:visited, a:active {
@@ -14,6 +14,10 @@ ul, ol {
     padding: 0;
 } 
 
-h1 {
+h1, h2 {
     font-family: var(--title-font);
+}
+
+p, li {
+    font-family: var(--text-font);
 }
