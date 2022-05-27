@@ -170,6 +170,10 @@ nav .nav__list .nav__button {
 .login__text a {
   color: var(--dark-gray);
 }
+.login__name {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 .login__item {
   padding: 10px 0;
 }

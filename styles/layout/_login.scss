@@ -38,6 +38,10 @@
             color: var(--dark-gray);
         }
     }
+    &__name {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
     &__item {
         padding: 10px 0;
         label {
