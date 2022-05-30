@@ -33,13 +33,15 @@ h1, h2 {
   font-family: var(--title-font);
 }
 
-p, li {
+p, li, label {
   font-family: var(--text-font);
 }
 
 :root {
   --background-color:rgb(150, 189, 71);
   --light-gray:#e6e6e6;
+  --middle-gray: #b3b3b3;
+  --dark-gray:#666666;
 }
 
 footer {
@@ -128,4 +130,115 @@ nav .nav__list .nav__button {
 }
 .call-to-action img {
   width: 100%;
+}
+
+.login {
+  background-color: var(--light-gray);
+  width: 100%;
+  height: 100vh;
+}
+.login__logo {
+  padding: 50px 0 60px 0;
+  text-align: center;
+}
+.login__container {
+  display: grid;
+  grid-template-columns: minmax(20px, 1fr) minmax(50px, 400px) minmax(20px, 1fr);
+  grid-template-areas: "left center right";
+}
+.login__box {
+  background-color: white;
+  margin: auto;
+  grid-area: center;
+  padding: 50px;
+  border-radius: 40px;
+  width: 100%;
+}
+.login__box input {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: var(--light-gray);
+}
+.login__box button {
+  text-align: center;
+}
+.login__text {
+  padding: 10px 0 30px 0;
+}
+.login__text a {
+  color: var(--dark-gray);
+}
+.login__name {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.login__item {
+  padding: 10px 0;
+}
+.login__item label {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-weight: 600;
+  padding: 0 10px;
+  line-height: 2;
+  border: none;
+}
+.login__item label a {
+  font-weight: normal;
+  display: grid;
+  justify-items: end;
+}
+.login__button {
+  text-align: center;
+  padding-top: 20px;
+}
+.login__button button {
+  background-color: var(--middle-gray);
+  border: none;
+  border-radius: 50px;
+  text-align: center;
+  font-weight: 600;
+  padding: 10px 30px;
+}
+
+.nav__profile {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: gray;
+  border-radius: 100%;
+}
+
+.dashboard {
+  padding: 120px 20px;
+  display: grid;
+  justify-content: space-around;
+  gap: 20px;
+}
+.dashboard__item {
+  border-radius: 30px;
+  width: 600px;
+  background-color: var(--light-gray);
+}
+.dashboard__text {
+  padding: 30px;
+}
+.dashboard__text h2 {
+  padding-bottom: 20px;
+}
+.dashboard__text p {
+  margin-bottom: 50px;
+}
+.dashboard__button {
+  width: 170px;
+  margin: auto;
+  text-align: center;
+  background-color: var(--middle-gray);
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-family: var(--text-font);
+  font-weight: 600;
+  border-radius: 30px;
 }/*# sourceMappingURL=style.css.map */

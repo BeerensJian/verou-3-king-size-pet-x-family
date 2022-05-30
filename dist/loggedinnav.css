@@ -1,0 +1,13 @@
+.test {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: gray;
+  border-radius: 100%;
+}
+
+.arm {
+  width: 100px;
+  height: 50px;
+  background-color: aquamarine;
+}/*# sourceMappingURL=loggedinnav.css.map */

@@ -1,12 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <h1>Login Page</h1>
-</body>
-</html>
+<%- include('partials/boilerplate.ejs') %>
+<div class="login">
+    <div class="login__logo">
+        <a href="/"><h1 class="logo">Logo</h1></a> 
+    </div>
+
+
+    <main>
+        <div class="login__container">
+           <div class="login__box">
+               <div class="login__text">
+                    <h2>Welcome back!</h2>
+                    <p>Don't have an account yet? <a href="/signup">Sign up!</a></p>
+               </div>
+
+                <form action="">
+                    <div class="login__form">
+                        <div class="login__item">
+                            <label for="username">Email address</label> 
+                            <input type="text" placeholder="Enter email address" name="username" required> 
+                        </div>
+                        <div class="login__item">
+                            <label for="password">Password<a href="">Forgot password?</a></label>
+                            <input type="password" placeholder="Enter Password" name="password" required> 
+                        </div>
+                        <div class="login__button">
+                            <button class="" type="submit">Login</button>   
+                        </div>
+                            
+                        
+                    </div>
+                </form>
+            </div> 
+        </div>
+    </main>
+</div>
