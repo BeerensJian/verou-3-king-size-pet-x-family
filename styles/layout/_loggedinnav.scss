@@ -4,5 +4,10 @@
      height: 30px;
      background-color: gray;
      border-radius: 100%;
+     overflow: hidden;
+     object-fit: cover;
+     img{
+          width: 100%;   
+     }
 }
 

@@ -1,11 +1,10 @@
 nav{
     width: 100%;
     background-color: var(--light-gray);
-    border: 2px solid black;
-    padding: 10px;
     .logo {
-        font-size: 35px;
-        color: #4d4d4d;
+        max-width: 120px;
+        height: auto;
+        padding: 15px 0;
     }
     .nav__list {
         font-size: large;
@@ -15,7 +14,7 @@ nav{
         align-items: center;
         justify-content: space-between;
         & li { 
-            padding: 20px;
+            padding: 0 10px;
         }
         .nav__links {
             display: flex; 

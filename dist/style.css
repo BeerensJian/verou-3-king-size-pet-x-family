@@ -54,12 +54,11 @@ footer {
 nav {
   width: 100%;
   background-color: var(--light-gray);
-  border: 2px solid black;
-  padding: 10px;
 }
 nav .logo {
-  font-size: 35px;
-  color: #4d4d4d;
+  max-width: 120px;
+  height: auto;
+  padding: 15px 0;
 }
 nav .nav__list {
   font-size: large;
@@ -70,7 +69,7 @@ nav .nav__list {
   justify-content: space-between;
 }
 nav .nav__list li {
-  padding: 20px;
+  padding: 0 10px;
 }
 nav .nav__list .nav__links {
   display: flex;
@@ -132,14 +131,17 @@ nav .nav__list .nav__button {
   width: 100%;
 }
 
+.login__logo {
+  max-width: 250px;
+  margin: auto;
+  display: flex;
+  padding: 70px 0 20px 0;
+}
+
 .login {
   background-color: var(--light-gray);
   width: 100%;
   height: 100vh;
-}
-.login__logo {
-  padding: 50px 0 60px 0;
-  text-align: center;
 }
 .login__container {
   display: grid;
@@ -209,6 +211,11 @@ nav .nav__list .nav__button {
   height: 30px;
   background-color: gray;
   border-radius: 100%;
+  overflow: hidden;
+  object-fit: cover;
+}
+.nav__profile img {
+  width: 100%;
 }
 
 .dashboard {
