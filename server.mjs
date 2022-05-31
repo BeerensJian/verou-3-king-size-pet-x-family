@@ -1,5 +1,6 @@
 import express from "express";
 import mainRouter from "./routes/main.mjs";
+import dashboardRouter from "./routes/dashboard.mjs"
 import mongoSession from "connect-mongodb-session";
 import connectMongoDB from "./database/db.mjs";
 import userModel from "./Models/User.mjs"
@@ -30,9 +31,11 @@ app.use(session({
 
 app.set('view engine', 'ejs');
 app.use(express.static("dist"));
+app.use("/dashboard", express.static("dist"))
 
 
 
 /* Routes */
 app.use("/", mainRouter);
+app.use("/dashboard", dashboardRouter)
 app.listen(3000);

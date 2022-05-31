@@ -2,7 +2,7 @@ import express from "express";
 import bcrypt from "bcrypt";
 import mongoose from "mongoose"
 import UserModel from "../Models/User.mjs"
-import User from "../Models/User.mjs";
+import PetModel from "../Models/Pet.mjs";
 const router = express.Router();
 import isAuth from "../helpers/isAuth.mjs"
 
@@ -67,11 +67,6 @@ router.post("/signup", async (req, res) => {
 
     res.redirect("/login")
 })
-router.get("/dashboard", isAuth, (req, res) => {
-    res.render("dashboard");
-})
-router.get("/addpet", isAuth, (req, res) => {
-    res.render("addpet");
-})
+
 
 export default router;
