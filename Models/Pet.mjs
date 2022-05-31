@@ -35,7 +35,6 @@ const petSchema = new Schema({
     },
     ownerID: {
         type: String,
-        required: true
     }
 
 })

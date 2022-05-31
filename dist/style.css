@@ -248,4 +248,8 @@ nav .nav__list .nav__button {
   font-family: var(--text-font);
   font-weight: 600;
   border-radius: 30px;
+}
+.dashboard__petCard {
+  background-color: azure;
+  padding: 10px 30px;
 }/*# sourceMappingURL=style.css.map */

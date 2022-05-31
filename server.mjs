@@ -12,14 +12,16 @@ const app = express();
 // connect to mongo DB with mongoose
 connectMongoDB();
 
+// creates a session object to stored on the DB
 const store = new mongodbStore({
     uri: mongoURI,
     databaseName: "sessions",
     collection: "mySessions"
 })
-
+// parse info from forms
 app.use(express.urlencoded({extended:true}))
 
+//create cookie and store the session object we created before in our DB
 app.use(session({
     secret: 'Key that will sign the cookie',
     resave: false,
@@ -38,4 +40,6 @@ app.use("/dashboard", express.static("dist"))
 /* Routes */
 app.use("/", mainRouter);
 app.use("/dashboard", dashboardRouter)
+
+
 app.listen(3000);

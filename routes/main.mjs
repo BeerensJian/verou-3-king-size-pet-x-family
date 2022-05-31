@@ -2,7 +2,7 @@ import express from "express";
 import bcrypt from "bcrypt";
 import mongoose from "mongoose"
 import UserModel from "../Models/User.mjs"
-import PetModel from "../Models/Pet.mjs";
+
 const router = express.Router();
 import isAuth from "../helpers/isAuth.mjs"
 
@@ -37,6 +37,7 @@ router.post("/login", async (req, res) => {
     }
     // Create a variable that authenicates the user on each visit
     req.session.isAuth = true;
+    req.session.ownerID = user._id;
     res.redirect("/dashboard")
 })
 router.get("/signup", (req, res) => {

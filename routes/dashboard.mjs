@@ -1,12 +1,39 @@
 import express from 'express';
 import isAuth from '../helpers/isAuth.mjs';
+import PetModel from "../Models/Pet.mjs";
+
 const router = express.Router()
 
-router.get("/", isAuth, (req, res) => {
-    res.render("dashboard");
+router.get("/", isAuth, async (req, res) => {
+
+    const pets = await PetModel.find({ownerID: req.session.ownerID})
+    
+
+    res.render("dashboard", {pets: pets});
 })
 router.get("/addpet", isAuth, (req, res) => {
     res.render("addpet");
 })
+router.post("/addpet", isAuth, async (req, res) => {
+    const {name, gender, birthday, neutered, microshipNr, breed, typeOfAnimal, status} = req.body;
+
+    const pet = new PetModel({
+        name,
+        gender,
+        birthday,
+        neutered,
+        microshipNr,
+        breed,
+        typeOfAnimal,
+        status,
+        ownerID: req.session.ownerID
+    })
+
+    await pet.save();
+    console.log(pet)
+    res.redirect("/dashboard")
+
+})
+
 
 export default router;

@@ -9,7 +9,7 @@
         width: 600px;
         background-color: var(--light-gray); 
     }
-   
+
     &__text {
         padding: 30px;
         h2 {
@@ -31,6 +31,11 @@
         font-weight: 600;
         border-radius: 30px;
         
-        
+    
+    
+    }
+    &__petCard {
+        background-color: azure;
+        padding: 10px 30px;
     }
 }

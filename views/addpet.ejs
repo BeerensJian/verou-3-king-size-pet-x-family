@@ -2,7 +2,7 @@
 <%- include('partials/loggedinnav.ejs') %>
 
 <main>
-    <form action="/addpet" method="post">
+    <form action="/dashboard/addpet" method="post">
         <div>
             <div>
                 <div>
@@ -10,10 +10,10 @@
                     <input type="text" placeholder="Pet name" name="name" id="name" required> 
                 </div>
                 <div>
-                    <input type="radio" id="" name="gender" value="male">
+                    <input type="radio" id="male" name="gender" value="male">
                     <label for="male">Male</label>
                     
-                    <input type="radio" id="" name="gender" value="female">
+                    <input type="radio" id="female" name="gender" value="female">
                     <label for="female">Female</label>
                 </div>
                 <div>
@@ -35,11 +35,11 @@
                 <div>
                     <div>
                         <label for="breed">Breed</label> 
-                        <input type="text" placeholder="ex. Shiba Inu" name="" id="breed"> 
+                        <input type="text" placeholder="ex. Shiba Inu" name="breed" id="breed"> 
                     </div>
                     <div>
                         <label for="pet-select">Type of animal</label>
-                        <select id="pet-select">
+                        <select id="pet-select" name="typeOfAnimal">
                             <option value="">Select</option>
                             <option value="dog">Dog</option>
                             <option value="cat">Cat</option>
@@ -53,7 +53,7 @@
                     </div>
                     <div>
                         <label for="status">Status</label>
-                        <select id="status">
+                        <select id="status" name="status">
                             <option value="normal">Normal</option>
                             <option value="passed-away">Passed away</option>
                             <option value="missing">Missing</option>
