@@ -66,5 +66,8 @@ router.post("/signup", async (req, res) => {
 router.get("/dashboard", isAuth, (req, res) => {
     res.render("dashboard");
 })
+router.get("/addpet", isAuth, (req, res) => {
+    res.render("addpet");
+})
 
 export default router;
