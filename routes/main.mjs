@@ -11,11 +11,14 @@ router.get("/", (req, res) => {
     res.render("index");
 })
 router.get("/login", (req, res) => {
+    //check if the user is already logged in
     if (req.session.isAuth) {
         return res.redirect("/dashboard")
     }
 
-    res.render("login");
+    const error = req.session.error;
+    delete req.session.error;
+    res.render("login", {err: error});
 })
 router.post("/login", async (req, res) => {
     const {email, password} = req.body;
@@ -23,6 +26,7 @@ router.post("/login", async (req, res) => {
     const user = await UserModel.findOne({email})
     // if there isn't a user with that email, "refresh the page"
     if (!user) {
+        req.session.error = "Email not found";
         return res.redirect("/login");
     }
     // check if the the password matches the on in the DB
