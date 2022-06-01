@@ -14,10 +14,18 @@ ul, ol {
     padding: 0;
 } 
 
+ul li{
+    position: relative;
+}
+
 h1, h2 {
     font-family: var(--title-font);
 }
 
 p, li, label {
     font-family: var(--text-font);
+}
+
+p {
+    font-size: 21px;
 }

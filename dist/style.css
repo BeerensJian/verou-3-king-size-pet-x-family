@@ -29,12 +29,20 @@ ul, ol {
   padding: 0;
 }
 
+ul li {
+  position: relative;
+}
+
 h1, h2 {
   font-family: var(--title-font);
 }
 
 p, li, label {
   font-family: var(--text-font);
+}
+
+p {
+  font-size: 21px;
 }
 
 :root {
@@ -205,7 +213,7 @@ nav .nav__list .nav__button {
   padding: 10px 30px;
 }
 
-.nav__profile {
+.menu__profile {
   cursor: pointer;
   width: 30px;
   height: 30px;
@@ -214,8 +222,24 @@ nav .nav__list .nav__button {
   overflow: hidden;
   object-fit: cover;
 }
-.nav__profile img {
+.menu__profile img {
   width: 100%;
+}
+ul li .menu__dropdown {
+  background-color: var(--light-gray);
+  display: none;
+  width: 100px;
+  position: absolute;
+  top: 45px;
+  left: 0;
+}
+ul li .menu__dropdown li {
+  width: 100%;
+  display: block;
+  padding: 10px 0px;
+}
+#dropdown:checked ~ .menu__dropdown {
+  display: block;
 }
 
 .dashboard {
@@ -259,7 +283,7 @@ nav .nav__list .nav__button {
 
 .error {
   background-color: rgb(206, 64, 64);
-  border: 1px solid red;
+  border: red;
   color: white;
   padding: 5px;
 }/*# sourceMappingURL=style.css.map */
