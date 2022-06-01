@@ -42,18 +42,22 @@ router.post("/login", async (req, res) => {
 })
 router.get("/signup", (req, res) => {
     if (req.session.isAuth) {
-        return res.redirect("/dashboard")
+        return res.redirect("/dashboard");
     }
 
-    res.render("signup");
+    const error = req.session.error;
+    delete req.session.error;
+    console.log(error)
+    res.render("signup", {err: error});
 })
 router.post("/signup", async (req, res) => {
     const {firstname, lastname, email, password} = req.body;
     // Check if there's already a user with that email
-    let user = await UserModel.findOne({email})
+    let user = await UserModel.findOne({email});
 
     if (user) {
-        return res.redirect('/signup')
+        req.session.error = "There is already a user with this email";
+        return res.redirect('/signup');
     }
 
     const hashedPass = await bcrypt.hash(password, 12);

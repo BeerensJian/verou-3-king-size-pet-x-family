@@ -250,6 +250,9 @@ nav .nav__list .nav__button {
   border-radius: 30px;
 }
 .dashboard__petCard {
-  background-color: azure;
+  background-color: var(--light-gray);
   padding: 10px 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 30px;
 }/*# sourceMappingURL=style.css.map */
