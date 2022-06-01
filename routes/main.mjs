@@ -15,10 +15,7 @@ router.get("/login", (req, res) => {
     if (req.session.isAuth) {
         return res.redirect("/dashboard")
     }
-
-    const error = req.session.error;
-    delete req.session.error;
-    res.render("login", {err: error});
+    res.render("login", {err: req.flash("error")});
 })
 router.post("/login", async (req, res) => {
     const {email, password} = req.body;
@@ -26,7 +23,7 @@ router.post("/login", async (req, res) => {
     const user = await UserModel.findOne({email})
     // if there isn't a user with that email, "refresh the page"
     if (!user) {
-        req.session.error = "Email not found";
+        req.flash("error", "There is no user with that email adress")
         return res.redirect("/login");
     }
     // check if the the password matches the on in the DB
@@ -45,10 +42,7 @@ router.get("/signup", (req, res) => {
         return res.redirect("/dashboard");
     }
 
-    const error = req.session.error;
-    delete req.session.error;
-    console.log(error)
-    res.render("signup", {err: error});
+    res.render("signup", {err: req.flash("error")});
 })
 router.post("/signup", async (req, res) => {
     const {firstname, lastname, email, password} = req.body;
@@ -56,7 +50,7 @@ router.post("/signup", async (req, res) => {
     let user = await UserModel.findOne({email});
 
     if (user) {
-        req.session.error = "There is already a user with this email";
+        req.flash("error", "Email adress is already in use")
         return res.redirect('/signup');
     }
 
