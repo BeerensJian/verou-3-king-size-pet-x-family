@@ -12,3 +12,21 @@ html {
 body {
     width: 100vw;
 }
+
+button {
+    color: white;
+}
+
+button {
+    cursor: pointer;
+}
+
+.button {
+    color: white;
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #88C443;
+    color: white;
+}

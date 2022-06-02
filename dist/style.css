@@ -13,6 +13,24 @@ body {
   width: 100vw;
 }
 
+button {
+  color: white;
+}
+
+button {
+  cursor: pointer;
+}
+
+.button {
+  color: white;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #88C443;
+  color: white;
+}
+
 :root {
   --title-font:new-spirit, serif;
   --text-font:Gill Sans Nova, sans serif;
@@ -85,7 +103,8 @@ footer {
 li .nav__login {
   color: var(--light-text);
 }
-.nav__button {
+li .nav__button {
+  color: white;
   background-color: var(--middle);
   padding: 10px 35px;
   border-radius: 50px;
