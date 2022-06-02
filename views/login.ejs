@@ -12,7 +12,7 @@
                     <h2>Welcome back!</h2>
                     <p>Don't have an account yet? <a href="/signup">Sign up!</a></p>
                </div>
-               <% if (err) { %>
+               <% if (err.length != 0) { %>
                 <div class="error"><%= err  %></div>
                 <% } %>  
                 <form action="/login" method="post">

@@ -281,5 +281,16 @@ ul li .menu__dropdown li {
   border-radius: 30px;
 }
 .dashboard__petCard {
-  padding: 10px 30px 20px 30px;
+  background-color: var(--light-gray);
+  padding: 10px 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.error {
+  background-color: rgb(206, 64, 64);
+  border: red;
+  color: white;
+  padding: 5px;
 }/*# sourceMappingURL=style.css.map */

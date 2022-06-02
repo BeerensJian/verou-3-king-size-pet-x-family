@@ -10,23 +10,22 @@ import isAuth from "../helpers/isAuth.mjs"
 router.get("/", (req, res) => {
     res.render("index");
 })
+
 router.get("/login", (req, res) => {
     //check if the user is already logged in
     if (req.session.isAuth) {
         return res.redirect("/dashboard")
     }
-
-    const error = req.session.error;
-    delete req.session.error;
-    res.render("login", {err: error});
+    res.render("login", {err: req.flash("error")});
 })
+
 router.post("/login", async (req, res) => {
     const {email, password} = req.body;
 
     const user = await UserModel.findOne({email})
     // if there isn't a user with that email, "refresh the page"
     if (!user) {
-        req.session.error = "Email not found";
+        req.flash("error", "There is no user with that email adress")
         return res.redirect("/login");
     }
     // check if the the password matches the on in the DB
@@ -40,20 +39,25 @@ router.post("/login", async (req, res) => {
     req.session.ownerID = user._id;
     res.redirect("/dashboard")
 })
+
+
 router.get("/signup", (req, res) => {
     if (req.session.isAuth) {
-        return res.redirect("/dashboard")
+        return res.redirect("/dashboard");
     }
 
-    res.render("signup");
+    res.render("signup", {err: req.flash("error")});
 })
+
+
 router.post("/signup", async (req, res) => {
     const {firstname, lastname, email, password} = req.body;
     // Check if there's already a user with that email
-    let user = await UserModel.findOne({email})
+    let user = await UserModel.findOne({email});
 
     if (user) {
-        return res.redirect('/signup')
+        req.flash("error", "Email adress is already in use")
+        return res.redirect('/signup');
     }
 
     const hashedPass = await bcrypt.hash(password, 12);
@@ -67,6 +71,13 @@ router.post("/signup", async (req, res) => {
     await user.save()
 
     res.redirect("/login")
+})
+
+router.post("/logout", (req, res) => {
+    req.session.destroy(err => {
+        if (err) throw err;
+        res.redirect("/")
+    })
 })
 
 

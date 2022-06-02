@@ -1,2 +1,9 @@
 @forward 'globals';
 @forward 'layout';
+
+.error {
+    background-color: rgb(206, 64, 64);
+    border: red;
+    color: white;
+    padding: 5px;
+}
