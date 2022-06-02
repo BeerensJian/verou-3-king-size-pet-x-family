@@ -20,7 +20,7 @@ body {
 
 a, a:visited, a:active {
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 
 ul, ol {
@@ -47,46 +47,48 @@ p {
 
 :root {
   --background-color:rgb(150, 189, 71);
-  --light-gray:#e6e6e6;
-  --middle-gray: #b3b3b3;
-  --dark-gray:#666666;
+  --light:#ECF2E3;
+  --middle: #A8C98D;
+  --dark:#666666;
+  --light-text:#666666;
 }
 
 footer {
-  margin: 100px 0 0 0;
-  background-color: var(--light-gray);
+  background-color: var(--light);
   width: 100%;
   height: 70px;
 }
 
-nav {
+.nav {
   width: 100%;
-  background-color: var(--light-gray);
 }
-nav .logo {
-  max-width: 120px;
+.nav__logo {
+  max-width: 170px;
   height: auto;
-  padding: 15px 0;
+  padding: 35px 0;
 }
-nav .nav__list {
+.nav__list {
   font-size: large;
+  font-weight: 600;
   width: 85%;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-nav .nav__list li {
+.nav__list li {
   padding: 0 10px;
 }
-nav .nav__list .nav__links {
+.nav__links {
   display: flex;
 }
-nav .nav__list .nav__button {
-  font-weight: 600;
-  background-color: #b3b3b3;
+li .nav__login {
+  color: var(--light-text);
+}
+.nav__button {
+  background-color: var(--middle);
   padding: 10px 35px;
-  border-radius: 20px;
+  border-radius: 50px;
 }
 
 .container {
@@ -147,7 +149,7 @@ nav .nav__list .nav__button {
 }
 
 .login {
-  background-color: var(--light-gray);
+  background-color: var(--light);
   width: 100%;
   height: 100vh;
 }
@@ -169,7 +171,7 @@ nav .nav__list .nav__button {
   border-radius: 10px;
   padding: 10px 20px;
   width: 100%;
-  background-color: var(--light-gray);
+  background-color: var(--light);
 }
 .login__box button {
   text-align: center;
@@ -178,7 +180,7 @@ nav .nav__list .nav__button {
   padding: 10px 0 30px 0;
 }
 .login__text a {
-  color: var(--dark-gray);
+  color: var(--dark);
 }
 .login__name {
   display: grid;
@@ -205,12 +207,16 @@ nav .nav__list .nav__button {
   padding-top: 20px;
 }
 .login__button button {
-  background-color: var(--middle-gray);
+  background-color: var(--middle);
   border: none;
   border-radius: 50px;
   text-align: center;
   font-weight: 600;
   padding: 10px 30px;
+}
+
+.loggedin__nav {
+  background-color: var(--light);
 }
 
 .menu__profile {
@@ -226,7 +232,7 @@ nav .nav__list .nav__button {
   width: 100%;
 }
 ul li .menu__dropdown {
-  background-color: var(--light-gray);
+  background-color: var(--middle);
   display: none;
   width: 100px;
   position: absolute;
@@ -247,11 +253,12 @@ ul li .menu__dropdown li {
   display: grid;
   justify-content: space-around;
   gap: 20px;
+  background-color: var(--light);
 }
 .dashboard__item {
   border-radius: 30px;
   width: 600px;
-  background-color: var(--light-gray);
+  background-color: #F9F9F9;
 }
 .dashboard__text {
   padding: 30px;
@@ -266,7 +273,7 @@ ul li .menu__dropdown li {
   width: 170px;
   margin: auto;
   text-align: center;
-  background-color: var(--middle-gray);
+  background-color: var(--middle);
   border-radius: 50px;
   padding: 10px 30px;
   font-family: var(--text-font);
