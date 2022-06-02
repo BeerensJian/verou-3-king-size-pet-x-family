@@ -1,13 +1,15 @@
-nav{
+.nav{
     width: 100%;
-    background-color: var(--light-gray);
-    .logo {
-        max-width: 120px;
+   
+    &__logo {
+        max-width: 170px;
         height: auto;
-        padding: 15px 0;
+        padding: 35px 0;
     }
-    .nav__list {
+
+    &__list {
         font-size: large;
+        font-weight: 600;
         width: 85%;
         margin: auto;
         display: flex;
@@ -16,14 +18,19 @@ nav{
         & li { 
             padding: 0 10px;
         }
-        .nav__links {
-            display: flex; 
-        }
-        .nav__button {
-            font-weight: 600;
-            background-color: #b3b3b3;
-            padding: 10px 35px ;
-            border-radius: 20px;
-        }
+    }    
+    &__links {
+        display: flex; 
     }
+
+    li &__login {
+        color: var(--light-text);
+    }
+
+    &__button {
+        background-color: var(--middle);
+        padding: 10px 35px ;
+        border-radius: 50px;
+    }
+    
 }

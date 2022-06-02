@@ -1,5 +1,7 @@
+.loggedin__nav {
+     background-color: var(--light);
+}
 .menu {
-
      &__profile {
           cursor: pointer;
           width: 30px;
@@ -14,7 +16,7 @@
      }
 
      ul li &__dropdown{
-          background-color: var(--light-gray);
+          background-color: var(--middle);
           display:none;
           width: 100px;
           position: absolute;
