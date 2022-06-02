@@ -10,6 +10,7 @@ import isAuth from "../helpers/isAuth.mjs"
 router.get("/", (req, res) => {
     res.render("index");
 })
+
 router.get("/login", (req, res) => {
     //check if the user is already logged in
     if (req.session.isAuth) {
@@ -17,6 +18,7 @@ router.get("/login", (req, res) => {
     }
     res.render("login", {err: req.flash("error")});
 })
+
 router.post("/login", async (req, res) => {
     const {email, password} = req.body;
 
@@ -37,6 +39,8 @@ router.post("/login", async (req, res) => {
     req.session.ownerID = user._id;
     res.redirect("/dashboard")
 })
+
+
 router.get("/signup", (req, res) => {
     if (req.session.isAuth) {
         return res.redirect("/dashboard");
@@ -44,6 +48,8 @@ router.get("/signup", (req, res) => {
 
     res.render("signup", {err: req.flash("error")});
 })
+
+
 router.post("/signup", async (req, res) => {
     const {firstname, lastname, email, password} = req.body;
     // Check if there's already a user with that email
@@ -65,6 +71,13 @@ router.post("/signup", async (req, res) => {
     await user.save()
 
     res.redirect("/login")
+})
+
+router.post("/logout", (req, res) => {
+    req.session.destroy(err => {
+        if (err) throw err;
+        res.redirect("/")
+    })
 })
 
 

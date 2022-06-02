@@ -3,7 +3,7 @@
 
 <main>
     <form action="/dashboard/addpet" method="post">
-        <% if (err) { %>
+        <% if (err.length != 0) { %>
             <div class="error"><%= err  %></div>
         <% } %>  
         <div>

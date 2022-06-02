@@ -14,7 +14,7 @@
                </div>
 
                 <form action="/signup" method="post">
-                    <% if (err) { %>
+                    <% if (err.length != 0) { %>
                         <div class="error"><%= err  %></div>
                     <% } %>  
                     <div class="login__form">
