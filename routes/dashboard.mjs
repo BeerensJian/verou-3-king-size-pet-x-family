@@ -1,6 +1,6 @@
 import express from 'express';
 import isAuth from '../helpers/isAuth.mjs';
-import { showDate } from '../helpers/petHelpers.mjs';
+import { showDate, showAge } from '../helpers/petHelpers.mjs';
 import PetModel from "../Models/Pet.mjs";
 import UserModel from "../Models/User.mjs"
 import getGenderIcon from '../helpers/getGenderIcon.mjs';
@@ -11,7 +11,7 @@ const router = express.Router()
 router.get("/", isAuth, async (req, res) => {
 
     const pets = await PetModel.find({ownerID: req.session.ownerID})
-    res.render("dashboard", {pets: pets, getGenderIcon : getGenderIcon});
+    res.render("dashboard", {pets: pets, getGenderIcon : getGenderIcon, showAge : showAge});
 })
 router.get("/addpet", isAuth, (req, res) => {
     res.render("addpet", {err : req.flash("msg")});

@@ -119,7 +119,7 @@ li .nav__button {
   padding: 115px 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 40px;
   align-items: center;
 }
 .into img {
@@ -268,7 +268,7 @@ ul li .menu__dropdown li {
 }
 
 .dashboard {
-  padding: 120px 20px;
+  padding: 50px 20px;
   display: grid;
   justify-content: space-around;
   gap: 20px;
@@ -280,10 +280,10 @@ ul li .menu__dropdown li {
   background-color: #F9F9F9;
 }
 .dashboard__text {
-  padding: 30px;
+  padding: 40px 50px;
 }
 .dashboard__text h2 {
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 .dashboard__text p {
   margin-bottom: 50px;
@@ -299,21 +299,25 @@ ul li .menu__dropdown li {
   font-weight: 600;
   border-radius: 30px;
 }
-.dashboard__petCard {
-  background-color: var(--light-gray);
-  padding: 10px 30px;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin-bottom: 30px;
+
+.petcard {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 20px;
 }
-.dashboard__petCard a {
-  border: 1px solid black;
-  display: block;
-  width: fit-content;
-  padding: 5px;
-  border-radius: 5px;
-  margin-left: auto;
-  margin-right: 0;
+.petcard__img {
+  width: 55px;
+  height: 55px;
+  background-color: gray;
+  border-radius: 50px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.petcard__img img {
+  width: 100%;
+}
+.petcard__name {
+  font: bold 18px/30px var(--text-font);
 }
 
 .error {

@@ -2,6 +2,7 @@
 <%- include('partials/loggedinnav.ejs') %>
 
 <main class="dashboard">
+    
     <section class="dashboard__item">
         <div class="dashboard__text">
             <h2>Messages</h2>
@@ -13,12 +14,19 @@
             <h2>Pets</h2>
             <% if (pets != false) { %> 
                 <% pets.forEach(pet => { %>
-                    <div class="dashboard__petCard">
-                        <h4><%= pet.name %> </h4>
-                        <i class="<%= getGenderIcon(pet.gender) %>" style="font-size:24px"></i>
-                        <p>ID : <%= pet.microshipNr || "None" %> </p>
-                        <a href="/dashboard/pet/<%= pet.id %>">Details</a>
-                    </div>
+                    
+                    <a class="petcard" href="/dashboard/pet/<%= pet.id %>">
+                        <div class="petcard__img" >
+                            <img src="img/saayapic.jpeg" alt="">
+                        </div>
+                        
+                        <div class="petcard__info">
+                            <h4 class="petcard__name"><%= pet.name %> <i class="<%= getGenderIcon(pet.gender) %>" style="font-size:24px"></i></h4>
+                            <p>Age: <%= showAge(pet.birthday) %> </p>
+                            <p>ID : <%= pet.microshipNr || "None" %> </p>
+                        </div>
+                    </a>
+                    
             <%  }); 
             } else { %> 
             <p>You haven't added any pets yet</p>
