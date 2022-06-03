@@ -46,7 +46,7 @@ router.get("/pet/:id", async (req, res) => {
     const pet = await PetModel.find({ _id : req.params.id})
     const owner = await UserModel.find({ _id : pet.ownerID})
 
-    res.render("test")
+    res.render("pet")
 })
 
 

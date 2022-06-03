@@ -320,6 +320,10 @@ ul li .menu__dropdown li {
   font: bold 18px/30px var(--text-font);
 }
 
+.pet {
+  border: 1px solid black;
+}
+
 .error {
   background-color: rgb(206, 64, 64);
   border: red;

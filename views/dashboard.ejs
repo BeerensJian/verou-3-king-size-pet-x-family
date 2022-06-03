@@ -2,7 +2,7 @@
 <%- include('partials/loggedinnav.ejs') %>
 
 <main class="dashboard">
-    
+
     <section class="dashboard__item">
         <div class="dashboard__text">
             <h2>Messages</h2>
@@ -21,7 +21,7 @@
                         </div>
                         
                         <div class="petcard__info">
-                            <h4 class="petcard__name"><%= pet.name %> </h4>
+                            <h3 class="petcard__name"><%= pet.name %> </h3>
                             <i class="<%= getGenderIcon(pet.gender) %>" style="font-size:24px"></i>
                             <p>ID : <%= pet.microshipNr || "None" %> </p>
                         </div>
