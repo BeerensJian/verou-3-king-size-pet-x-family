@@ -21,8 +21,8 @@
                         </div>
                         
                         <div class="petcard__info">
-                            <h3 class="petcard__name"><%= pet.name %> </h3>
-                            <i class="<%= getGenderIcon(pet.gender) %>" style="font-size:24px"></i>
+                            <h3 class="petcard__name"><%= pet.name %> <i class="<%= getGenderIcon(pet.gender) %>" style="font-size:24px"></i> </h3>
+                            <p><%= showAge(pet.birthday) %> </p>
                             <p>ID : <%= pet.microshipNr || "None" %> </p>
                         </div>
                     </a>
