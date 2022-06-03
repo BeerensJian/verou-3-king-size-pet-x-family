@@ -1,5 +1,6 @@
 import express from 'express';
 import isAuth from '../helpers/isAuth.mjs';
+import { showDate, showAge } from '../helpers/petHelpers.mjs';
 import PetModel from "../Models/Pet.mjs";
 import UserModel from "../Models/User.mjs"
 import getGenderIcon from '../helpers/getGenderIcon.mjs';
@@ -10,7 +11,7 @@ const router = express.Router()
 router.get("/", isAuth, async (req, res) => {
 
     const pets = await PetModel.find({ownerID: req.session.ownerID})
-    res.render("dashboard", {pets: pets, getGenderIcon : getGenderIcon});
+    res.render("dashboard", {pets: pets, getGenderIcon : getGenderIcon, showAge : showAge});
 })
 router.get("/addpet", isAuth, (req, res) => {
     res.render("addpet", {err : req.flash("msg")});
@@ -43,7 +44,7 @@ router.post("/addpet", isAuth, async (req, res) => {
 
 router.get("/pet/:id", async (req, res) => {
     
-    const pet = await PetModel.find({ _id : req.params.id})
+    const pet = await PetModel.findOne({ _id : req.params.id})
     const owner = await UserModel.find({ _id : pet.ownerID})
 
     res.render("pet")

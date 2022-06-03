@@ -32,6 +32,7 @@ router.post("/login", async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password)
 
     if (!isMatch) {
+        req.flash("error", "Password does not match")
         return res.redirect("/login");
     }
     // Create a variable that authenicates the user on each visit
@@ -58,6 +59,10 @@ router.post("/signup", async (req, res) => {
     if (user) {
         req.flash("error", "Email adress is already in use")
         return res.redirect('/signup');
+    }
+    if (password.length <= 4) {
+        req.flash("error", "Your password should atleast contain 5 characters")
+        return res.redirect("/signup")
     }
 
     const hashedPass = await bcrypt.hash(password, 12);
