@@ -245,8 +245,8 @@ li .nav__button {
 
 .menu__profile {
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   background-color: gray;
   border-radius: 100%;
   overflow: hidden;
