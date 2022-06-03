@@ -29,10 +29,11 @@
         }  
     }
     &__main {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, max-content));
         gap: 20px; 
-        width: 100%;
+        
+
     }
 
     .top{
@@ -59,11 +60,8 @@
 }
 
 .info {
-    width: calc(100% - calc(1009 / 1719 * 100%));
-    min-width: 250px;
-    max-width: 350px;
-   
-   
+    width: 350px;
+
     &__img{
         grid-area: img;
         width: 100px;
@@ -85,7 +83,8 @@
 }
 
 .document {
-    width: calc(1009 / 1719 * 100%);
+    width: 450px;
+    
     &__header {
         div {
            
@@ -113,8 +112,15 @@
 }
 
 .appointment {
-    width: calc(1009 / 1719 * 100%);
-    width: 30%;
-    
+    width: 100%;
+
 }
 
+.weight{ 
+    width: 100%;
+
+}
+
+.advice {
+    width: 100%;
+}

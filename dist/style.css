@@ -360,10 +360,9 @@ ul li .menu__dropdown li {
   border-bottom: 2px solid;
 }
 .pet__main {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, max-content));
   gap: 20px;
-  width: 100%;
 }
 .pet .top {
   display: flex;
@@ -385,9 +384,7 @@ ul li .menu__dropdown li {
 }
 
 .info {
-  width: 41.3030831879%;
-  min-width: 250px;
-  max-width: 350px;
+  width: 350px;
 }
 .info__img {
   grid-area: img;
@@ -406,7 +403,7 @@ ul li .menu__dropdown li {
 }
 
 .document {
-  width: 58.6969168121%;
+  width: 450px;
 }
 .document__header div {
   display: flex;
@@ -429,8 +426,15 @@ ul li .menu__dropdown li {
 }
 
 .appointment {
-  width: 58.6969168121%;
-  width: 30%;
+  width: 100%;
+}
+
+.weight {
+  width: 100%;
+}
+
+.advice {
+  width: 100%;
 }
 
 .error {
