@@ -1,6 +1,22 @@
 <%- include('partials/boilerplate.ejs') %>
 <%- include('partials/loggedinnav.ejs') %>
 
+
+
+    
+    <section class="pet">
+        <div class="pet__img">
+            <img src="" alt="">
+        </div>
+
+        <div class="pet__text">
+            <h3>Name : <%= pet.name %>  </h3> <span>gender <%= pet.gender %> </span>
+            <p>Age: <%= showDate(pet.birthday) %> </p>
+            <p>Microchip no: <%= pet.microshipNr %> </p>
+            <p>Breed: <%= pet.breed %> </p>
+        </div>
+    </section>
+
 <div class="pet__container">
     <div class="pet">
         <nav>
@@ -8,7 +24,9 @@
                 <li><a class="pet-link active" href="">Saaya</a></li>
                 <li><a class="pet-link inactive" href="">Moon</a></li>
             </ul>
-            
+            <form action="/dashboard/delete/<%= pet.id %>" method="post">
+                <button>Delete pet</button>
+            </form>
         </nav>
 
         <main class="pet__main"> 
@@ -23,9 +41,12 @@
                 </div>
 
                 <div class="info__text">
-                    <h3>Saaya <img src="img/male.png" alt=""></h3> 
-                    <p>1 year old</p>
-                    <p>ID 1939 91834 18239</p>
+                    <h3><%= pet.name %> <i class="<%= getGenderIcon(pet.gender) %>" style="font-size:24px"></i></h3> 
+                    <p>Birthday: <%= showDate(pet.birthday) %> </p>
+                    <p>Ship NR:<%= pet.microshipNr %> </p>
+                    <p>Breed: <%= pet.breed %> </p>
+                    <p>Status: <%= pet.status %> </p>
+                    <p>Neutered: <%= pet.neutered  %> </p>
                 </div>
             </section>
 

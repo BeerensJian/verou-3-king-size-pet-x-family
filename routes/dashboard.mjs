@@ -48,7 +48,7 @@ router.get("/pet/:id", async (req, res) => {
     const pet = await PetModel.findOne({ _id : req.params.id})
     const owner = await UserModel.find({ _id : pet.ownerID})
 
-    res.render("pet", {pet: pet, owner : owner, showDate: showDate,})
+    res.render("pet", {pet: pet, owner : owner, showDate: showDate, getGenderIcon : getGenderIcon})
 })
 
 router.post("/delete/:id", async (req, res) => {
