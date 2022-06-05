@@ -4,17 +4,20 @@
     <ul><a href=""></a></ul>
 </nav>
 <main>
-        
-
+    <form action="/dashboard/delete/<%= pet.id %>" method="post">
+        <button>Delete pet</button>
+    </form>
+    
     <section class="pet">
         <div class="pet__img">
             <img src="" alt="">
         </div>
 
         <div class="pet__text">
-            <h3>Pet name</h3> <span>gender</span>
-            <p>Age</p>
-            <p>Microchip no.</p>
+            <h3>Name : <%= pet.name %>  </h3> <span>gender <%= pet.gender %> </span>
+            <p>Age: <%= showDate(pet.birthday) %> </p>
+            <p>Microchip no: <%= pet.microshipNr %> </p>
+            <p>Breed: <%= pet.breed %> </p>
         </div>
     </section>
 
