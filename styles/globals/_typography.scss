@@ -2,6 +2,13 @@
     --title-font:new-spirit, serif;
     --text-font:Gill Sans Nova, sans serif;
 }
+h1,h2 {
+    font-family: var(--title-font);
+}
+
+h3 {
+    font: bold 25px/30px var(--text-font) ;
+}
 
 a, a:visited, a:active {
     text-decoration: none;
@@ -18,9 +25,7 @@ ul li{
     position: relative;
 }
 
-h1, h2 {
-    font-family: var(--title-font);
-}
+
 
 p, li, label {
     font-family: var(--text-font);

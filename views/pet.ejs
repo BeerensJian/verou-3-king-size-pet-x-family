@@ -1,54 +1,72 @@
 <%- include('partials/boilerplate.ejs') %>
 <%- include('partials/loggedinnav.ejs') %>
-<nav>
-    <ul><a href=""></a></ul>
-</nav>
-<main>
-    <form action="/dashboard/delete/<%= pet.id %>" method="post">
-        <button>Delete pet</button>
-    </form>
-    
-    <section class="pet">
-        <div class="pet__img">
-            <img src="" alt="">
-        </div>
 
-        <div class="pet__text">
-            <h3>Name : <%= pet.name %>  </h3> <span>gender <%= pet.gender %> </span>
-            <p>Age: <%= showDate(pet.birthday) %> </p>
-            <p>Microchip no: <%= pet.microshipNr %> </p>
-            <p>Breed: <%= pet.breed %> </p>
-        </div>
-    </section>
+<div class="pet__container">
+    <div class="pet">
+        <nav>
+            <ul>
+                <li><a class="pet-link active" href="">Saaya</a></li>
+                <li><a class="pet-link inactive" href="">Moon</a></li>
+            </ul>
+            
+        </nav>
 
-    <section class="pet document">
-        <div class="document__header">
-            <h3>Documents</h3>
-            <i>plus icon</i>
-            <a href="">Show all</a>
-        </div>
-        <div class="document__items">
-            <p>  <i>icon</i> <a href="">The item</a></p>
-        </div>
-    </section>
+        <main class="pet__main"> 
+            <section class="pet info">
+                <div class="top">
+                    <div class="info__img">
+                        <img src="img/saayapic.jpeg" alt="">
+                    </div>
+                    <a class="dots" href="">
+                        <img src="img/dots.png" alt="">
+                    </a>
+                </div>
 
-    <section class="pet appoinment">
+                <div class="info__text">
+                    <h3>Saaya <img src="img/male.png" alt=""></h3> 
+                    <p>1 year old</p>
+                    <p>ID 1939 91834 18239</p>
+                </div>
+            </section>
+
+            <section class="pet document">
+                <div class="document__header top">
+                    <h3>Documents</h3>
+                    <div>
+                        <a href=""><img src="img/plus.png" alt=""></a>
+                        <a class="document__header__button" href="">Show all</a>
+                    </div>
+                    
+                </div>
+                <div class="document__items">
+                    <p>  <i>icon</i> <a href="">The item</a></p>
+                </div>
+            </section>
+
+            <section class="pet appointment">
+                <div class="top">
+                    <h3>Appointments</h3>
+                    <a class="dots" href="">
+                        <img src="img/dots.png" alt="">
+                    </a>
+                </div>
+            </section>
+
+            <section class="pet weight">
+                <div class="weight__header">
+                    <h3>weight</h3>
+                    <span>plus icon</span>
+                </div>
+            </section>
+
+            <section class="pet advice">
+                <div>
+                    <h3>Advice</h3>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
 
 
-    </section>
-
-    <section class="pet weight">
-        <div class="weight__header">
-            <h3>weight</h3>
-            <span>plus icon</span>
-        </div>
-    </section>
-
-    <section class="pet advice">
-        <div>
-            <h3>Advice</h3>
-        </div>
-    </section>
-</main>
-
-
+<%- include('partials/footer.ejs') %>

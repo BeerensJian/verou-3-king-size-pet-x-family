@@ -29,11 +29,20 @@ button {
 .button:hover {
   background-color: #88C443;
   color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 :root {
   --title-font:new-spirit, serif;
   --text-font:Gill Sans Nova, sans serif;
+}
+
+h1, h2 {
+  font-family: var(--title-font);
+}
+
+h3 {
+  font: bold 25px/30px var(--text-font);
 }
 
 a, a:visited, a:active {
@@ -51,10 +60,6 @@ ul li {
   position: relative;
 }
 
-h1, h2 {
-  font-family: var(--title-font);
-}
-
 p, li, label {
   font-family: var(--text-font);
 }
@@ -67,7 +72,7 @@ p {
   --background-color:rgb(150, 189, 71);
   --light:#ECF2E3;
   --middle: #A8C98D;
-  --dark:#666666;
+  --dark:#4A6D4A;
   --light-text:#666666;
 }
 
@@ -240,8 +245,8 @@ li .nav__button {
 
 .menu__profile {
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   background-color: gray;
   border-radius: 100%;
   overflow: hidden;
@@ -273,6 +278,13 @@ ul li .menu__dropdown li {
   justify-content: space-around;
   gap: 20px;
   background-color: var(--light);
+}
+.dashboard .welcome {
+  font: bold 35px var(--title-font);
+  color: var(--dark);
+}
+.dashboard section {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .dashboard__item {
   border-radius: 30px;
@@ -328,12 +340,114 @@ ul li .menu__dropdown li {
   border-radius: 5px;
   margin: 10px 0px;
 }
+
 .confirmationBox p {
   margin-bottom: 0px;
 }
 
+.pet__container {
+  background-color: var(--light);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 90vh;
+}
+
 .pet {
-  border: 1px solid black;
+  width: 90%;
+}
+.pet nav {
+  margin: 0 auto 40px auto;
+  width: 95%;
+}
+.pet nav ul {
+  display: flex;
+}
+.pet nav ul a {
+  margin: 0 5px;
+  padding: 3px 10px;
+  font-size: large;
+}
+.pet nav .active {
+  color: var(--dark);
+  border-bottom: 2px solid;
+}
+.pet__main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, max-content));
+  gap: 20px;
+}
+.pet .top {
+  display: flex;
+  justify-content: space-between;
+}
+.pet .dots {
+  width: 6px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.pet .dots img {
+  width: 100%;
+}
+.pet section {
+  padding: 40px;
+  background-color: #F9F9F9;
+  border-radius: 30px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.info {
+  width: 350px;
+}
+.info__img {
+  grid-area: img;
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  border-radius: 50px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.info__img img {
+  width: 100%;
+}
+.info__text img {
+  width: 20px;
+}
+
+.document {
+  width: 450px;
+}
+.document__header div {
+  display: flex;
+  align-items: center;
+}
+.document__header div a {
+  padding: 0 5px;
+}
+.document__header div img {
+  width: 35px;
+}
+.document__header div .document__header__button {
+  font-family: var(--text-font);
+  color: var(--dark);
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 3px solid var(--dark);
+  border-radius: 20px;
+  padding: 4px 12px;
+}
+
+.appointment {
+  width: 100%;
+}
+
+.weight {
+  width: 100%;
+}
+
+.advice {
+  width: 100%;
 }
 
 .error {

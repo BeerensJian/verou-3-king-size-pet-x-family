@@ -5,6 +5,16 @@
     gap: 20px;
     background-color: var(--light);
 
+    .welcome {
+        font: bold 35px var(--title-font);
+        color: var(--dark);
+        
+    }
+
+    section {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
     &__item { 
         border-radius: 30px;
         width: 600px;
