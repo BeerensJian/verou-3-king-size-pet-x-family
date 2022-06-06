@@ -2,21 +2,6 @@
 <%- include('partials/loggedinnav.ejs') %>
 
 
-
-    
-    <section class="pet">
-        <div class="pet__img">
-            <img src="" alt="">
-        </div>
-
-        <div class="pet__text">
-            <h3>Name : <%= pet.name %>  </h3> <span>gender <%= pet.gender %> </span>
-            <p>Age: <%= showDate(pet.birthday) %> </p>
-            <p>Microchip no: <%= pet.microshipNr %> </p>
-            <p>Breed: <%= pet.breed %> </p>
-        </div>
-    </section>
-
 <div class="pet__container">
     <div class="pet">
         <nav>
@@ -79,7 +64,9 @@
                 <section class="pet weight">
                     <div class="weight__header">
                         <h3>weight</h3>
-                        <span>plus icon</span>
+                        <div>
+                            <canvas id="myChart"></canvas>
+                        </div>
                     </div>
                 </section>
 
@@ -87,5 +74,5 @@
     </div>
 </div>
 
-
+<script src="/script.js"></script>
 <%- include('partials/footer.ejs') %>
