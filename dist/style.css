@@ -256,21 +256,20 @@ li .nav__button {
 .menu__profile img {
   width: 100%;
 }
-
-.dropdown {
-  position: relative;
-}
-.dropdown__button {
-  border: none;
-}
-.dropdown__content {
+ul li .menu__dropdown {
+  background-color: var(--middle);
   display: none;
+  width: 100px;
   position: absolute;
-  min-width: 160px;
-  z-index: 1;
+  top: 45px;
+  left: 0;
 }
-
-.dropdown:hover .dropdown-content {
+ul li .menu__dropdown li {
+  width: 100%;
+  display: block;
+  padding: 10px 0px;
+}
+#dropdown:checked ~ .menu__dropdown {
   display: block;
 }
 
