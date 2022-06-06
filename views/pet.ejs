@@ -29,62 +29,60 @@
             </form>
         </nav>
 
-        <main class="pet__main"> 
-            <section class="pet info">
-                <div class="top">
-                    <div class="info__img">
-                        <img src="img/saayapic.jpeg" alt="">
+        <main> 
+            <div class="pet__main">
+                <section class="pet info">
+                    <div class="top">
+                        <div class="info__img">
+                            <img src="img/saayapic.jpeg" alt="">
+                        </div>
+                        <a class="dots" href="">
+                            <img src="img/dots.png" alt="">
+                        </a>
                     </div>
-                    <a class="dots" href="">
-                        <img src="img/dots.png" alt="">
-                    </a>
-                </div>
 
-                <div class="info__text">
-                    <h3><%= pet.name %> <i class="<%= getGenderIcon(pet.gender) %>" style="font-size:24px"></i></h3> 
-                    <p>Birthday: <%= showDate(pet.birthday) %> </p>
-                    <p>Ship NR:<%= pet.microshipNr %> </p>
-                    <p>Breed: <%= pet.breed %> </p>
-                    <p>Status: <%= pet.status %> </p>
-                    <p>Neutered: <%= pet.neutered  %> </p>
-                </div>
-            </section>
-
-            <section class="pet document">
-                <div class="document__header top">
-                    <h3>Documents</h3>
-                    <div>
-                        <a href=""><img src="img/plus.png" alt=""></a>
-                        <a class="document__header__button" href="">Show all</a>
+                    <div class="info__text">
+                        <h3><%= pet.name %> <i class="<%= getGenderIcon(pet.gender) %>" style="font-size:24px"></i></h3> 
+                        <p>Birthday: <%= showDate(pet.birthday) %> </p>
+                        <p>Ship NR:<%= pet.microshipNr %> </p>
+                        <p>Breed: <%= pet.breed %> </p>
+                        <p>Status: <%= pet.status %> </p>
+                        <p>Neutered: <%= pet.neutered  %> </p>
                     </div>
-                    
-                </div>
-                <div class="document__items">
-                    <p>  <i>icon</i> <a href="">The item</a></p>
-                </div>
-            </section>
+                </section>
 
-            <section class="pet appointment">
-                <div class="top">
-                    <h3>Appointments</h3>
-                    <a class="dots" href="">
-                        <img src="img/dots.png" alt="">
-                    </a>
-                </div>
-            </section>
+                <section class="pet document">
+                    <div class="document__header top">
+                        <h3>Documents</h3>
+                        <div>
+                            <a href=""><img src="img/plus.png" alt=""></a>
+                            <a class="document__header__button" href="">Show all</a>
+                        </div>
+                        
+                    </div>
+                    <div class="document__items">
+                        <p>  <i>icon</i> <a href="">The item</a></p>
+                    </div>
+                </section>
 
-            <section class="pet weight">
-                <div class="weight__header">
-                    <h3>weight</h3>
-                    <span>plus icon</span>
-                </div>
-            </section>
+                <section class="pet appointment">
+                    <div class="top">
+                        <h3>Appointments</h3>
+                        <a class="dots" href="">
+                            <img src="img/dots.png" alt="">
+                        </a>
+                    </div>
+                </section>
+            </div>
+            
+       
+                <section class="pet weight">
+                    <div class="weight__header">
+                        <h3>weight</h3>
+                        <span>plus icon</span>
+                    </div>
+                </section>
 
-            <section class="pet advice">
-                <div>
-                    <h3>Advice</h3>
-                </div>
-            </section>
         </main>
     </div>
 </div>

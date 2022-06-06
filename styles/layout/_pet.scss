@@ -30,8 +30,9 @@
     }
     &__main {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, max-content));
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         gap: 20px; 
+        margin-bottom: 20px;
         
 
     }
@@ -60,7 +61,7 @@
 }
 
 .info {
-    width: 350px;
+    width: 100%;
 
     &__img{
         grid-area: img;
@@ -83,7 +84,7 @@
 }
 
 .document {
-    width: 450px;
+    width: 100%;
     
     &__header {
         div {
@@ -121,6 +122,4 @@
 
 }
 
-.advice {
-    width: 100%;
-}
+
