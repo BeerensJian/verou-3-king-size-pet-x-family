@@ -70,10 +70,12 @@ p {
 
 :root {
   --background-color:rgb(150, 189, 71);
+  --white:#F9F9F9;
   --light:#ECF2E3;
   --middle: #A8C98D;
   --dark:#4A6D4A;
   --light-text:#666666;
+  --shadow:rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 footer {
@@ -99,9 +101,6 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
-.nav__list li {
-  padding: 0 10px;
-}
 .nav__links {
   display: flex;
 }
@@ -113,6 +112,7 @@ li .nav__button {
   background-color: var(--middle);
   padding: 10px 35px;
   border-radius: 50px;
+  margin-left: 15px;
 }
 
 .container {
@@ -244,34 +244,77 @@ li .nav__button {
   background-color: var(--light);
 }
 
-.menu__profile {
+.dropdown {
+  position: relative;
+  width: 100px;
+}
+.dropdown__img {
+  text-align: center;
+}
+.dropdown__profile {
   cursor: pointer;
   width: 35px;
   height: 35px;
-  background-color: gray;
   border-radius: 100%;
   overflow: hidden;
   object-fit: cover;
+  box-shadow: var(--shadow);
 }
-.menu__profile img {
+.dropdown__profile img {
   width: 100%;
 }
-
-.dropdown {
-  position: relative;
-}
-.dropdown__button {
-  border: none;
+.dropdown__content::before {
+  content: "";
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid var(--white);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
 }
 .dropdown__content {
-  display: none;
+  line-height: 2;
+  transition: all 0.3s linear;
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+  padding: 10px 0 15px 0;
+  margin: 10px auto;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
   position: absolute;
-  min-width: 160px;
-  z-index: 1;
+  background-color: var(--white);
 }
-
-.dropdown:hover .dropdown-content {
-  display: block;
+.dropdown__content button {
+  all: unset;
+  cursor: pointer;
+}
+.dropdown__content .line {
+  margin: auto;
+  position: relative;
+  width: 60px;
+}
+.dropdown__content .line::before {
+  content: " ";
+  position: absolute;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 3px;
+  bottom: 0px;
+  border-radius: 20px;
+  transition: transform 0.5s linear;
+  transform-origin: center;
+  transform: scaleX(0);
+  background-color: var(--middle);
+}
+.dropdown__content .line:hover::before {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+.dropdown:hover .dropdown__content {
+  opacity: 1;
 }
 
 .dashboard {

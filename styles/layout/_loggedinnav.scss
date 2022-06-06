@@ -1,36 +1,89 @@
 .loggedin__nav {
      background-color: var(--light);
 }
-.menu {
+.dropdown {
+     position: relative;
+     width: 100px;
+     
+     &__img {
+         text-align: center; 
+     }
+
      &__profile {
           cursor: pointer;
           width: 35px;
           height: 35px;
-          background-color: gray;
           border-radius: 100%;
           overflow: hidden;
           object-fit: cover;
+          box-shadow: var(--shadow);
           img{
                width: 100%;
           } 
      }
-
-     ul li &__dropdown{
-          background-color: var(--middle);
-          display:none;
-          width: 100px;
+     &__content::before{
+          content: "";
           position: absolute;
-          top: 45px;
-          left:0;
-          li { 
-               width:100%;
-               display:block;
-               padding:10px 0px; 
+          top: -19px;
+          left: 50%;
+          transform: translateX(-50%);
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid var(--white);
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+     }
+     &__content{
+          line-height: 2;
+          transition: all 0.3s linear;
+          box-shadow: var(--shadow);
+          border-radius: 20px;
+          padding: 10px 0 15px 0;
+          margin: 10px auto;
+          width: 100%;
+          text-align: center;
+          opacity: 0;
+          position: absolute;
+          background-color: var(--white);
+          button {
+               all: unset;
+               cursor: pointer;
+          
           }
+          .line {
+               margin: auto;
+               position: relative;
+               width: 60px;
+               
+          }
+          .line::before {
+               content: " ";
+               position: absolute;
+               left: calc(50% - 30px);
+               width: 60px;
+               height: 3px;
+               bottom: 0px;
+               border-radius: 20px;
+               transition: transform 0.5s linear;
+               transform-origin: center;
+               transform: scaleX(0);  
+               background-color: var(--middle);
+          }
+     
+          .line:hover::before {
+               
+               transform: scaleX(1);  
+               transform-origin: center;
+          }
+
      }
 
-     #dropdown:checked ~ &__dropdown {  
-     display:block;
+     .dropdown:hover &__content{
+          opacity: 1;
      }
+
+    
+        
+     
+
 
 }

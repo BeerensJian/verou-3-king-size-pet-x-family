@@ -2,15 +2,18 @@
     <nav class="loggedin__nav">
         <ul class="nav__list">
             <li>
-                <a href="/"><img class="nav__logo" src="img/logo-green.png" alt="Pet Family logo"></a> 
+                <a href="/dashboard"><img class="nav__logo" src="img/logo-green.png" alt="Pet Family logo"></a> 
             </li>
-            <li class="menu">
-                <label for="dropdown"><img class="menu__profile" src="img/profile.png" alt=""></label>
-                <input type="checkbox" id="dropdown" hidden>
-                <ul class="menu__dropdown">
-                    <li>Profile</li>
-                    <li><form action="/logout" method="post"><button>Logout</button></form></li>
-                </ul>
+            <li class="dropdown">
+                <div class="dropdown__img"><img class="dropdown__profile" src="img/profile.png" alt=""></div>
+                <div class="dropdown__content">
+                    <ul>
+                        <li class="line" ><a href="">Profile</a></li>
+                        <li class="line" ><form action="/logout" method="post"><button>Logout</button></form></li>
+                    </ul> 
+                </div>
+               
+                
             </li>
         </ul>   
     </nav>   
