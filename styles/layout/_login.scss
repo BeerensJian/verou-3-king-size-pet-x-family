@@ -43,24 +43,29 @@
     }
     &__name {
         display: grid;
+        gap: 20px;
         grid-template-columns: repeat(2, 1fr);
     }
     &__item {
         padding: 10px 0;
         label {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
             font-weight: 600;
             padding: 0 10px ;
             line-height: 2;
             border: none;
-            a {
-                font-weight: normal;
-                display: grid;
-                justify-items: end;
-            }
+            
         }
     }
+
+.forgot-password {
+    display: flex;
+    justify-content: space-between;
+    a {
+        font-weight: normal;
+    }
+}
+
+  
     &__button {
         text-align: center;
         padding-top: 20px;

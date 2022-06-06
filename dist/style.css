@@ -208,23 +208,24 @@ li .nav__button {
 }
 .login__name {
   display: grid;
+  gap: 20px;
   grid-template-columns: repeat(2, 1fr);
 }
 .login__item {
   padding: 10px 0;
 }
 .login__item label {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   font-weight: 600;
   padding: 0 10px;
   line-height: 2;
   border: none;
 }
-.login__item label a {
+.login .forgot-password {
+  display: flex;
+  justify-content: space-between;
+}
+.login .forgot-password a {
   font-weight: normal;
-  display: grid;
-  justify-items: end;
 }
 .login__button {
   text-align: center;
@@ -340,7 +341,6 @@ ul li .menu__dropdown li {
   border-radius: 5px;
   margin: 10px 0px;
 }
-
 .confirmationBox p {
   margin-bottom: 0px;
 }
