@@ -333,17 +333,14 @@ li .nav__button {
 }
 .dashboard__item {
   border-radius: 30px;
-  width: 600px;
+  min-width: 500px;
   background-color: #F9F9F9;
 }
 .dashboard__text {
-  padding: 40px 50px;
+  padding: 45px 50px 55px 50px;
 }
 .dashboard__text h2 {
-  padding-bottom: 30px;
-}
-.dashboard__text p {
-  margin-bottom: 50px;
+  padding-bottom: 15px;
 }
 .dashboard__button {
   width: 170px;
@@ -358,7 +355,10 @@ li .nav__button {
 }
 
 .petcard {
+  transition: all 0.3s ease-in-out;
+  padding: 20px 10px;
   display: grid;
+  align-items: center;
   grid-template-columns: 60px 1fr;
   gap: 20px;
 }
@@ -374,7 +374,19 @@ li .nav__button {
   width: 100%;
 }
 .petcard__name {
-  font: bold 18px/30px var(--text-font);
+  font: bold 22px var(--text-font);
+}
+.petcard__extra {
+  line-height: 1.2;
+}
+
+.petcard:hover {
+  background-color: var(--light);
+  border-radius: 20px;
+}
+
+.petcard_container {
+  margin-bottom: 40px;
 }
 
 .confirmationBox {
