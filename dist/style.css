@@ -491,6 +491,42 @@ li .nav__button {
   width: 100%;
 }
 
+.addpet {
+  min-height: 80vh;
+  background-color: var(--light);
+}
+.addpet input {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: var(--light);
+}
+.addpet__container {
+  margin: 0 auto;
+  background-color: var(--white);
+  max-width: 600px;
+  padding: 40px 50px;
+  box-shadow: var(--shadow);
+  border-radius: 30px;
+}
+.addpet__grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, max-content));
+  justify-content: space-around;
+}
+.addpet__item {
+  display: inline-block;
+  padding: 0 0 5px 5px;
+}
+.addpet__group {
+  padding: 5px 0;
+  display: block;
+}
+.addpet__group label {
+  width: 100%;
+}
+
 .error {
   background-color: rgb(206, 64, 64);
   border: red;

@@ -1,75 +1,84 @@
 <%- include('partials/header.ejs') %>
 <%- include('partials/loggedinnav.ejs') %>
 
-<main>
+<main class="addpet">
     <form action="/dashboard/addpet" method="post">
         <% if (err.length != 0) { %>
             <div class="error"><%= err  %></div>
         <% } %>  
-        <div>
-            <div>
+        <div class="addpet__container">
+            <div class="addpet__grid">
                 <div>
-                    <label for="name">Name:*</label> 
-                    <input type="text" placeholder="Pet name" name="name" id="name" required> 
-                </div>
-                <div>
-                    <p></p>
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label>
-                    
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label>
-                </div>
-                <div>
-                    <label for="birthday">Birthday:</label> 
-                    <input type="date" id="birthday" name="birthday" value="" min="" max="">
-                </div>
-                <div>
-                    <label for="neutered">Sprayed or Neutered?</label>
-                    <input type="radio" id="notNeutered" name="neutered" value="no">
-                    <label for="notNeutered">No</label>
-                    
-                    <input type="radio" id="neutered" name="neutered" value="yes">
-                    <label for="neutered">Yes</label>
-                </div>
-                <div>
-                    <label for="microship">Microchip number</label> 
-                    <input type="number" id="microship" name="microshipNr" value="" min="" max="">
-                </div>
-                <div>
-                    <div>
-                        <label for="breed">Breed</label> 
-                        <input type="text" placeholder="ex. Shiba Inu" name="breed" id="breed"> 
+                    <div class="addpet__group">
+                        <label class="addpet__item" for="name">Name:*</label> <br> 
+                        <input type="text" placeholder="Pet name" name="name" id="name" required> 
                     </div>
-                    <div>
-                        <label for="pet-select">Type of animal*</label>
-                        <select id="pet-select" name="typeOfAnimal">
-                            <option value="">Select</option>
-                            <option value="dog">Dog</option>
-                            <option value="cat">Cat</option>
-                            <option value="rabbit">Rabbit</option>
-                            <option value="hamster">Hamster</option>
-                            <option value="reptile">Reptile</option>
-                            <option value="bird">Bird</option>
-                            <option value="fish">Fish</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="status">Status*</label>
-                        <select id="status" name="status">
-                            <option value="normal">Normal</option>
-                            <option value="passed-away">Passed away</option>
-                            <option value="missing">Missing</option>
-                            <option value="sold">Sold</option>
-                            <option value="unknown">Unknown</option>
+                    <div class="addpet__group">
+                        <label class="addpet__item" for="gender">gender:*</label> <br> 
+                        <div class="addpet__options">
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label>
                             
-                        </select>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                        </div>
+                        
+                    </div>
+                    <div class="addpet__group">
+                        <label class="addpet__item" for="birthday">Birthday:</label> <br> 
+                        <input type="date" id="birthday" name="birthday" value="" min="" max="">
+                    </div>
+                    <div class="addpet__group">
+                        <label class="addpet__item" for="neutered">Sprayed or Neutered?</label> <br>
+                        <input type="radio" id="notNeutered" name="neutered" value="no">
+                        <label for="notNeutered">No</label>
+                    
+                        <input type="radio" id="neutered" name="neutered" value="yes">
+                        <label for="neutered">Yes</label>
+                    </div>
+                </div>
+                <div>
+                    <div class="addpet__group">
+                        <label class="addpet__item" for="microship">Microchip number</label> <br>
+                        <input type="number" id="microship" name="microshipNr" value="" min="" max="">
                     </div>
 
+                    <div>
+                        <div class="addpet__group">
+                            <label class="addpet__item" for="breed">Breed</label> <br>
+                            <input type="text" placeholder="ex. Shiba Inu" name="breed" id="breed"> 
+                        </div>
+                        <div class="addpet__group">
+                            <label class="addpet__item" for="pet-select">Type of animal*</label> <br>
+                            <select id="pet-select" name="typeOfAnimal">
+                                <option value="">Select</option>
+                                <option value="dog">Dog</option>
+                                <option value="cat">Cat</option>
+                                <option value="rabbit">Rabbit</option>
+                                <option value="hamster">Hamster</option>
+                                <option value="reptile">Reptile</option>
+                                <option value="bird">Bird</option>
+                                <option value="fish">Fish</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="addpet__group">
+                            <label class="addpet__item" for="status">Status*</label> <br>
+                            <div class="select">
+                                <select id="status" name="status">
+                                    <option value="normal">Normal</option>
+                                    <option value="passed-away">Passed away</option>
+                                    <option value="missing">Missing</option>
+                                    <option value="sold">Sold</option>
+                                    <option value="unknown">Unknown</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
 
+
+                    </div>
                 </div>
-
             </div>
             <div class="login__button ">
                 <button class="button">Save</button>   
