@@ -6,12 +6,15 @@
     <div class="pet">
         <nav>
             <ul>
-                <li><a class="pet-link active" href="">Saaya</a></li>
-                <li><a class="pet-link inactive" href="">Moon</a></li>
+                <% allPets.forEach(petx => { %> 
+                    <li><a class="pet-link <%= isActive(pet, petx) %>" href="/dashboard/pet/<%= petx.id %>"><%= petx.name %> </a></li>
+                <% }) %>  
+                
             </ul>
             <form action="/dashboard/delete/<%= pet.id %>" method="post">
                 <button>Delete pet</button>
             </form>
+            <a href="/dashboard/edit/<%= pet.id %>">Edit</a>
         </nav>
 
         <main> 

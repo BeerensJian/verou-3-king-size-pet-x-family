@@ -36,8 +36,9 @@ app.use(flash())
 
 app.set('view engine', 'ejs');
 app.use(express.static("dist"));
-app.use("/dashboard", express.static("dist"))
-app.use("/dashboard/pet" , express.static("dist"))
+app.use("/dashboard", express.static("dist"));
+app.use("/dashboard/pet" , express.static("dist"));
+app.use("/dashboard/edit" , express.static("dist"));
 
 
 

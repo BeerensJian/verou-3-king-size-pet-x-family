@@ -6,6 +6,21 @@ const showDate = (date) => {
     return `${day}-${month}-${year}`;
 }
 
+const showDate2 = (date) => {
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    if( month.length === 1) {
+        month = "0" + month;
+    }
+    if (day.length === 1) {
+        day = "0" + day;
+    }
+
+    return `${year}-${month}-${day}`;
+}
+
 const showAge = (date) => {
 
     var date2 = new Date();
@@ -37,5 +52,15 @@ const showAge = (date) => {
 // console.log(diff.getUTCDate() - 1); // Gives day count of difference 
 }
 
-export { showDate, showAge }
+
+const isActive = (pet , petx) => {
+    if ( pet.id === petx.id) {
+        return "active"
+    } else {
+        return "inactive"
+    }
+}
+
+
+export { showDate, showDate2, showAge, isActive }
 
