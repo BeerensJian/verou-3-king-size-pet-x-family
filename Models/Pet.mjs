@@ -13,6 +13,7 @@ const petSchema = new Schema({
     },
     birthday: {
         type: Date,
+        default: new Date(),
         required: true,
     },
     neutered: {

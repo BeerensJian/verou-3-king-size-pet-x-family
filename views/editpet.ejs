@@ -1,8 +1,8 @@
 <%- include('partials/header.ejs') %>
 <%- include('partials/loggedinnav.ejs') %>
 
-<main>
-    <form action="/dashboard/edit" method="post">
+<main class="addpet">
+    <form action="/dashboard/edit/<%= pet.id %>" method="post">
         <% if (err.length != 0) { %>
             <div class="error"><%= err  %></div>
         <% } %>  
