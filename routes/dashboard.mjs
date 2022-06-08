@@ -7,6 +7,7 @@ import getGenderIcon from '../helpers/getGenderIcon.mjs';
 import flash from 'connect-flash';
 
 
+
 const router = express.Router()
 
 router.get("/", isAuth, async (req, res) => {
@@ -109,5 +110,13 @@ router.post("/delete/:id", async (req, res) => {
     // }
 })
 
+// ADD APPOINTMENT & DOCUMENT ROUTEs
+
+router.get("/appointment", (req, res) => {
+    res.render('appointment')
+})
+router.get("/document", (req, res) => {
+    res.render("document")
+})
 
 export default router;

@@ -16,7 +16,7 @@ router.get("/login", (req, res) => {
     if (req.session.isAuth) {
         return res.redirect("/dashboard")
     }
-    res.render("login", {err: req.flash("error")});
+    res.render("login", {err: req.flash("error"), title : "Landing page"});
 })
 
 router.post("/login", async (req, res) => {

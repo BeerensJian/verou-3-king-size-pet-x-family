@@ -39,6 +39,8 @@ app.use(express.static("dist"));
 app.use("/dashboard", express.static("dist"));
 app.use("/dashboard/pet" , express.static("dist"));
 app.use("/dashboard/edit" , express.static("dist"));
+app.use("/dashboard/appointment" , express.static("dist"));
+app.use("/dashboard/document" , express.static("dist"));
 
 
 
