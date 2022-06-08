@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import mongoURI from "../config.js"
+import mongoURI from "../config.mjs"
 
 const connectMongoDB = () => {
     mongoose.connect(process.env.MONGO_URI || mongoURI + "sessions" , {

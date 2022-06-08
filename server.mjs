@@ -5,7 +5,7 @@ import mongoSession from "connect-mongodb-session";
 import connectMongoDB from "./database/db.mjs";
 import userModel from "./Models/User.mjs"
 import session from "express-session";
-import mongoURI from "./config.js";
+import mongoURI from "./config.mjs";
 import flash from "connect-flash";
 
 const mongodbStore = mongoSession(session);
