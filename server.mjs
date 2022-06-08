@@ -15,7 +15,7 @@ connectMongoDB();
 
 // creates a session object to stored on the DB
 const store = new mongodbStore({
-    uri: mongoURI,
+    uri: "mongodb+srv://admin:admin@cluster0.j6lwd.mongodb.net/",
     databaseName: "sessions",
     collection: "mySessions"
 })
