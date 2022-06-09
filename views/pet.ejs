@@ -25,11 +25,11 @@
                                 <img class="more__img" src="img/dots.png" alt="">
                             </div>
                             
-                            <div class="more__content dropdown-content">
-                                <form action="/dashboard/delete/<%= pet.id %>" method="post">
-                                    <button class="line">Delete pet</button>
-                                </form>
+                            <div class="more__content">
                                 <a class="line" href="/dashboard/edit/<%= pet.id %>">Edit info</a>
+                                <form class="line" action="/dashboard/delete/<%= pet.id %>" method="post">
+                                    <button>Delete pet</button>
+                                </form>
                             </div>
                         </div> 
                     </div>
@@ -37,9 +37,8 @@
                     <div class="info__text">
                         <h3><%= pet.name %> <i class="<%= getGenderIcon(pet.gender) %>" style="font-size:24px"></i></h3> 
                         <p>Birthday: <%= showDate(pet.birthday) %> </p>
-                        <p>Chip NR: <%= pet.microshipNr %> </p>
+                        <p>ID <%= pet.microshipNr %> </p>
                         <p>Breed: <%= pet.breed %> </p>
-                        <p>Status: <%= pet.status %> </p>
                         <p>Neutered: <%= pet.neutered  %> </p>
                     </div>
                 </section>
@@ -49,7 +48,7 @@
                         <h3>Documents</h3>
                         <div>
                             <a href="/dashboard/document"><img src="img/plus.png" alt=""></a>
-                           
+                        
                         </div>
                         
                     </div>
@@ -77,13 +76,28 @@
             
        
                 <section class="pet weight">
-                    <div class="document__header top">
+                    <div class="top">
                         <h3>Weight</h3>
-                        <div>
-                            <a href=""><img src="img/plus.png" alt=""></a>
+                        
+                        <div class="addweight">
+                            <div class="addweight__button">
+                                <img class="addweight__img" src="img/plus.png" alt="">
+                            </div>
+
+                            <div class="addweight__content">
+                                <form class="" action="" method="">
+                                    <input type="number" placeholder="Enter weight">
+                                    
+                                    <div class="login__button ">
+                                        <button class="button">Save</button>   
+                                    </div>
+                                  
+                                </form>
+                            </div>
+
                         </div>
                     </div>
-                
+                    
                     <div>
                         <canvas id="myChart"></canvas>
                     </div>

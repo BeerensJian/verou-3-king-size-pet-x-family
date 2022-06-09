@@ -11,8 +11,8 @@ const labels = [
     labels: labels,
     datasets: [{
       label: 'Weight in KG',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: '#A8C98D',
+      borderColor: '#A8C98D',
       data: [3.5, 4, 5, 4, 4.6, 4, 6],
     }]
   };
@@ -38,3 +38,12 @@ function showDropdown() {
 }
 
 moreButton.addEventListener("click", showDropdown)
+
+const weightButton = document.querySelector(".addweight__button");
+const weightItems = document.querySelector(".addweight__content");
+
+function Dropdown() {
+  weightItems.classList.toggle("show");
+}
+
+weightButton.addEventListener("click", Dropdown)
