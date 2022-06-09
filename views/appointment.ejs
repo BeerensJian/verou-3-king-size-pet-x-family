@@ -1,25 +1,26 @@
 <%- include('partials/header.ejs') %>
 <%- include('partials/loggedinnav.ejs') %>
 
-<main class="appointment">
-    <div class="appointment__container">
+<main class="plus">
+    <div class="plus__container">
         <h2>Make an appointment</h2>
         <form action="">
-            <div>
-                <label for="">Doctors name</label> <br>
+            <div class="plus__item">
+                <label for="">Doctors name:</label> <br>
                 <input type="text" placeholder="Doctors name">
             </div>
-            <div class="">
+            <div class="plus__item">
                 <label for="appointment">Choose a date and time:</label> <br>
-
                 <input type="datetime-local" id="appointment" name="appointment" value="" min="" max="">
             </div>
 
-            <div>
-                <label for="pet-appointment">Choose your pet</label> <br>
-                <select name="" id="">
-                    <option value=""> foreach pet name?</option>
-                </select>
+            <div class="plus__item">
+                <label for="pet-appointment">Notes</label> <br>
+                <input type="text">
+            </div>
+
+            <div class="login__button">
+                <button class="button">Save</button>   
             </div>
 
         </form>
