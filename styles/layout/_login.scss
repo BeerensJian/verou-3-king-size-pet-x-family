@@ -8,7 +8,8 @@
 .login {
     background-color: var(--light);
     width: 100%;
-    height: 100vh;
+    min-height: 100%;
+    padding-bottom: 10%;
     &__container {
         display: grid;
         grid-template-columns:  minmax(20px, 1fr) minmax(50px, 400px) minmax(20px, 1fr);
@@ -53,7 +54,7 @@
             padding: 0 10px ;
             line-height: 2;
             border: none;
-            
+
         }
     }
 

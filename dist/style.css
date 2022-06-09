@@ -10,6 +10,7 @@ html {
 }
 
 body {
+  height: 100vh;
   width: 100vw;
 }
 
@@ -34,7 +35,7 @@ button {
 
 :root {
   --title-font:new-spirit, serif;
-  --text-font:Gill Sans Nova, sans serif;
+  --text-font:gill-sans-nova, sans serif;
 }
 
 h1, h2 {
@@ -79,9 +80,12 @@ p {
 }
 
 footer {
-  background-color: var(--light);
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  height: 70px;
+  height: 60px;
+  /* Height of the footer */
+  background: #6cf;
 }
 
 .nav {
@@ -175,7 +179,8 @@ li .nav__button {
 .login {
   background-color: var(--light);
   width: 100%;
-  height: 100vh;
+  min-height: 100%;
+  padding-bottom: 10%;
 }
 .login__container {
   display: grid;
@@ -504,7 +509,7 @@ li .nav__button {
 }
 
 .addpet {
-  min-height: 80vh;
+  min-height: 80%;
   background-color: var(--light);
 }
 .addpet input {
@@ -537,6 +542,11 @@ li .nav__button {
 }
 .addpet__group label {
   width: 100%;
+}
+
+.appointment {
+  background-color: var(--light);
+  min-height: 100%;
 }
 
 .error {
