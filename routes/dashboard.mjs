@@ -1,10 +1,12 @@
 import express from 'express';
 import isAuth from '../helpers/isAuth.mjs';
-import { showDate, showAge, isActive, showDate2 } from '../helpers/petHelpers.mjs';
+import { showDate, showAge, isActive, showDate2, getTime } from '../helpers/petHelpers.mjs';
 import PetModel from "../Models/Pet.mjs";
 import UserModel from "../Models/User.mjs"
+import AppointmentModel from '../Models/Appointment.mjs';
 import getGenderIcon from '../helpers/getGenderIcon.mjs';
 import flash from 'connect-flash';
+
 
 
 
@@ -53,9 +55,10 @@ router.get("/pet/:id", async (req, res) => {
     
     const pet = await PetModel.findOne({ _id : req.params.id})
     const pets = await PetModel.find({ownerID: req.session.ownerID})
+    const appointments =  await AppointmentModel.find({ petID : req.params.id })
 
     
-    res.render("pet", {pet: pet, allPets : pets, showDate: showDate, getGenderIcon : getGenderIcon, isActive : isActive})
+    res.render("pet", {pet: pet, allPets : pets, appointments: appointments , showDate: showDate, getGenderIcon : getGenderIcon, isActive : isActive, getTime : getTime})
 })
 
 /* EDIT PET DETAILS */
@@ -83,7 +86,7 @@ router.post("/edit/:id", async (req, res) => {
     pet.breed = breed;
     pet.typeOfAnimal = typeOfAnimal;
     pet.status = status;
-    pet.save();
+    await pet.save();
 
     res.redirect("/dashboard")
 })
@@ -112,8 +115,41 @@ router.post("/delete/:id", async (req, res) => {
 
 // ADD APPOINTMENT & DOCUMENT ROUTEs
 
-router.get("/appointment", (req, res) => {
-    res.render('appointment')
+router.get("/appointment/:id", (req, res) => {
+
+    res.render('appointment', { petid : req.params.id, err: req.flash("msg")})
+})
+router.post("/appointment/:id",(req, res) => {
+    function addHoursToDate(date, hours) {
+        let newDate = new Date(date)
+        return newDate.setHours(newDate.getHours() + hours)
+    }
+    
+    if (req.body.doctor == "") {
+        req.flash("msg", "Please specify a doctor")
+        return res.redirect(`/dashboard/appointment/${req.params.id}`)
+    }
+    if (req.body.appointment_time == "") {
+        req.flash("msg", "Please select a date and time")
+        return res.redirect(`/dashboard/appointment/${req.params.id}`)
+    }
+    const appDate = new Date(req.body.appointment_time)
+    const today = new Date();
+    if (appDate < today) {
+        req.flash("msg", "Please select a time in the future")
+        return res.redirect(`/dashboard/appointment/${req.params.id}`)
+    }
+
+    const appointment = new AppointmentModel({
+        doctor : req.body.doctor,
+        date : addHoursToDate(req.body.appointment_time, 2),
+        notes : req.body.notes,
+        ownerID : req.session.ownerID,
+        petID : req.params.id,
+    })
+
+    appointment.save()
+    res.redirect(`/dashboard/pet/${req.params.id}`)
 })
 router.get("/document", (req, res) => {
     res.render("document")

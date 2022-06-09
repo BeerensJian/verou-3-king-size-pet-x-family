@@ -6,6 +6,12 @@ const showDate = (date) => {
     return `${day}-${month}-${year}`;
 }
 
+const getTime = (date) => {
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    return `${hours}:${minutes}`
+}
+
 const showDate2 = (date) => {
     const month = date.getMonth() + 1;
     const day = date.getDate();
@@ -62,5 +68,5 @@ const isActive = (pet , petx) => {
 }
 
 
-export { showDate, showDate2, showAge, isActive }
+export { showDate, showDate2, showAge, isActive, getTime }
 

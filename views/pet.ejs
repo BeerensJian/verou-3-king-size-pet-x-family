@@ -57,11 +57,15 @@
                     <div class="document__header top">
                         <h3>Appointments</h3>
                         <div>
-                            <a href="/dashboard/appointment"><img src="img/plus.png" alt=""></a>
+                            <a href="/dashboard/appointment/<%= pet.id %>"><img src="img/plus.png" alt=""></a>
                         </div>
                     </div>
                     <div>
-                        <p>Here goes the appointment</p>
+                        <% appointments.forEach(appointment => { %>
+                            <div class="appointment">
+                                <p>You have an appointment with <%= appointment.doctor %> on <%= showDate(appointment.date) %> at <%= getTime(appointment.date) %> </p>
+                            </div>
+                        <% }); %> 
                     </div>
                 </section>
             </div>

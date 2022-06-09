@@ -3,20 +3,23 @@
 
 <main class="plus">
     <div class="plus__container">
+        <% if (err.length != 0) { %>
+            <div class="error"><%= err  %></div>
+            <% } %>  
         <h2>Make an appointment</h2>
-        <form action="">
+        <form action="/dashboard/appointment/<%= petid %>" method="post">
             <div class="plus__item">
-                <label for="">Doctors name:</label> <br>
-                <input type="text" placeholder="Doctors name">
+                <label for="doctor">Doctors name:</label> <br>
+                <input type="text" placeholder="Doctors name" id="doctor" name="doctor">
             </div>
             <div class="plus__item">
                 <label for="appointment">Choose a date and time:</label> <br>
-                <input type="datetime-local" id="appointment" name="appointment" value="" min="" max="">
+                <input type="datetime-local" id="appointment" name="appointment_time" value="" min="" max="">
             </div>
 
             <div class="plus__item">
                 <label for="pet-appointment">Notes</label> <br>
-                <input type="text">
+                <input type="text" id="pet-appointment" name="notes">
             </div>
 
             <div class="login__button">
