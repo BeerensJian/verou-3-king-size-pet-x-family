@@ -613,6 +613,38 @@ li .nav__button {
 .plus {
   background-color: var(--light);
   min-height: 100%;
+  display: grid;
+  grid-template-columns: minmax(20px, 1fr) minmax(50px, 400px) minmax(20px, 1fr);
+  grid-template-areas: "left center right";
+}
+.plus h2 {
+  padding: 10px 0 30px 0;
+}
+.plus__container {
+  margin: 0 auto;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  height: fit-content;
+  grid-area: center;
+  padding: 50px;
+  border-radius: 40px;
+  width: 100%;
+}
+.plus__item {
+  padding: 10px 0;
+}
+.plus__item label {
+  font-weight: 600;
+  padding: 0 10px;
+  line-height: 2;
+  border: none;
+}
+.plus__item input {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: var(--light);
 }
 
 .error {

@@ -1,4 +1,38 @@
 .plus{
     background-color: var(--light);
     min-height: 100%;
+    display: grid;
+    grid-template-columns:  minmax(20px, 1fr) minmax(50px, 400px) minmax(20px, 1fr);
+    grid-template-areas: 'left center right';
+    h2 {
+        padding: 10px 0 30px 0;  
+    }
+
+    &__container{
+        margin: 0 auto ;
+        background-color: var(--white);
+        box-shadow: var(--shadow);
+        height: fit-content;
+        grid-area: center;
+        padding: 50px;
+        border-radius: 40px;
+        width: 100%;
+    }
+    &__item {
+        padding: 10px 0;
+ 
+        label{
+            font-weight: 600;
+            padding: 0 10px ;
+            line-height: 2;
+            border: none;
+        }
+        input {
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            background-color: var(--light);
+        }
+    }
 }
