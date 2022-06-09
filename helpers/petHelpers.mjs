@@ -67,6 +67,32 @@ const isActive = (pet , petx) => {
     }
 }
 
+const serveIcon = (type) => {
+    if (type === "cat") {
+        return "/img/icons/cat.png"
+    }
+    if (type === "dog") {
+        return "/img/icons/dog.png"
+    }
+    if (type === "rabbit") {
+        return "/img/icons/rabbit.png"
+    }
+    if (type === "bird") {
+        return "/img/icons/bird.png"
+    }
+    if (type === "fish") {
+        return "/img/icons/clownfish.png"
+    }
+    if (type === "reptile") {
+        return "/img/icons/chameleon.png"
+    }
+    if (type === "hamster") {
+        return "/img/icons/hamster.png"
+    }
+    if (type === "other") {
+        return "/img/icons/bigfoot.png"
+    }
+}
 
-export { showDate, showDate2, showAge, isActive, getTime }
+export { showDate, showDate2, showAge, isActive, getTime, serveIcon }
 

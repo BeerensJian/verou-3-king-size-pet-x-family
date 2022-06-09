@@ -31,7 +31,7 @@
                         
                         <a class="petcard" href="/dashboard/pet/<%= pet.id %>">
                             <div class="petcard__img" >
-                                <img src="img/saayapic.jpeg" alt="">
+                                <img src="<%= serveIcon(pet.typeOfAnimal) %>" alt="">
                             </div>
                             
                             <div class="petcard__info">

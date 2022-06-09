@@ -1,6 +1,6 @@
 import express from 'express';
 import isAuth from '../helpers/isAuth.mjs';
-import { showDate, showAge, isActive, showDate2, getTime } from '../helpers/petHelpers.mjs';
+import { showDate, showAge, isActive, showDate2, getTime, serveIcon } from '../helpers/petHelpers.mjs';
 import PetModel from "../Models/Pet.mjs";
 import UserModel from "../Models/User.mjs"
 import AppointmentModel from '../Models/Appointment.mjs';
@@ -37,7 +37,8 @@ router.get("/", isAuth, async (req, res) => {
         msg : req.flash("msg"), 
         appointments : soonAppointments, 
         showDate: showDate, 
-        getTime : getTime
+        getTime : getTime,
+        serveIcon : serveIcon
     });
 })
 
@@ -87,7 +88,8 @@ router.get("/pet/:id", async (req, res) => {
         showDate: showDate, 
         getGenderIcon : getGenderIcon, 
         isActive : isActive, 
-        getTime : getTime
+        getTime : getTime,
+        serveIcon : serveIcon
     })
 })
 
