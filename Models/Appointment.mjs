@@ -16,7 +16,8 @@ const appointmentSchema = new Schema({
         type: String
     },
     petID: {
-        type: String
+        type: String,
+        ref: "Pet"
     }
 
 })

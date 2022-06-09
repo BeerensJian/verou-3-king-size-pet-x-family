@@ -8,6 +8,12 @@
     <section class="dashboard__item">
         <div class="dashboard__text">
             <h2>Messages</h2>
+            <% appointments.forEach(appointment => { %>
+                <div class="notification">
+                    <p>You Have an appointment with <%= appointment.doctor %> coming up soon! </p>
+                    <p><%= showDate(appointment.date) %>  <%= getTime(appointment.date) %>  </p>
+                </div>
+            <% }) %>
         </div> 
     </section>
 

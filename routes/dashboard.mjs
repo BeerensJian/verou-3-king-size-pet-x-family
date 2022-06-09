@@ -14,8 +14,21 @@ const router = express.Router()
 
 router.get("/", isAuth, async (req, res) => {
 
+    const appointments = await AppointmentModel.find({ ownerID : req.session.ownerID})
+    .populate("petID")
+    .select("doctor date notes petID")
+    .where("date")
+    
     const pets = await PetModel.find({ownerID: req.session.ownerID})
-    res.render("dashboard", {pets: pets, getGenderIcon : getGenderIcon, showAge : showAge, msg : req.flash("msg")});
+    res.render("dashboard", {
+        pets: pets,
+        getGenderIcon : getGenderIcon, 
+        showAge : showAge, 
+        msg : req.flash("msg"), 
+        appointments : appointments, 
+        showDate: showDate, 
+        getTime : getTime
+    });
 })
 
 /* ADDPET */
