@@ -29,3 +29,12 @@ const myChart = new Chart(
 document.getElementById('myChart'),
 config
 );
+
+const moreButton = document.querySelector(".more__button");
+const items = document.querySelector(".more__content");
+
+function showDropdown() {
+  items.classList.toggle("show");
+}
+
+moreButton.addEventListener("click", showDropdown)
