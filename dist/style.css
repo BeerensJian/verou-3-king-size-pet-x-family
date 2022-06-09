@@ -440,14 +440,6 @@ li .nav__button {
   display: flex;
   justify-content: space-between;
 }
-.pet .dots {
-  width: 6px;
-  overflow: hidden;
-  object-fit: cover;
-}
-.pet .dots img {
-  width: 100%;
-}
 .pet section {
   padding: 40px;
   background-color: #F9F9F9;
@@ -503,6 +495,83 @@ li .nav__button {
 
 .weight {
   width: 100%;
+}
+
+.more {
+  font-weight: 600;
+  font-family: var(--text-font);
+  cursor: pointer;
+  position: relative;
+  width: 100px;
+}
+.more__button {
+  text-align: end;
+}
+.more__img {
+  width: 6px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.more__img img {
+  width: 100%;
+}
+.more__content::before {
+  content: "";
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid var(--white);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+.more__content {
+  line-height: 2;
+  left: 47px;
+  transition: all 0.3s linear;
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+  padding: 10px 0 15px 0;
+  margin: 10px auto;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  position: absolute;
+  background-color: var(--white);
+  z-index: 1;
+}
+.more__content a {
+  color: black;
+}
+.more__content button {
+  all: unset;
+}
+.more .line {
+  margin: auto;
+  position: relative;
+  width: 75px;
+}
+.more .line::before {
+  content: " ";
+  position: absolute;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 3px;
+  bottom: 0px;
+  border-radius: 20px;
+  transition: transform 0.5s linear;
+  transform-origin: center;
+  transform: scaleX(0);
+  background-color: var(--middle);
+}
+.more .line:hover::before {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+
+.show {
+  opacity: 1;
 }
 
 .addpet {

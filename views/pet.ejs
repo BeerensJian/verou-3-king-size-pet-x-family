@@ -11,10 +11,6 @@
                 <% }) %>  
                 
             </ul>
-            <form action="/dashboard/delete/<%= pet.id %>" method="post">
-                <button>Delete pet</button>
-            </form>
-            <a href="/dashboard/edit/<%= pet.id %>">Edit</a>
         </nav>
 
         <main> 
@@ -24,15 +20,24 @@
                         <div class="info__img">
                             <img src="img/saayapic.jpeg" alt="">
                         </div>
-                        <a class="dots" href="">
-                            <img src="img/dots.png" alt="">
-                        </a>
+                        <div class="more">
+                            <div class="more__button">
+                                <img class="more__img" src="img/dots.png" alt="">
+                            </div>
+                            
+                            <div class="more__content dropdown-content">
+                                <form action="/dashboard/delete/<%= pet.id %>" method="post">
+                                    <button class="line">Delete pet</button>
+                                </form>
+                                <a class="line" href="/dashboard/edit/<%= pet.id %>">Edit info</a>
+                            </div>
+                        </div> 
                     </div>
 
                     <div class="info__text">
                         <h3><%= pet.name %> <i class="<%= getGenderIcon(pet.gender) %>" style="font-size:24px"></i></h3> 
                         <p>Birthday: <%= showDate(pet.birthday) %> </p>
-                        <p>Ship NR:<%= pet.microshipNr %> </p>
+                        <p>Chip NR: <%= pet.microshipNr %> </p>
                         <p>Breed: <%= pet.breed %> </p>
                         <p>Status: <%= pet.status %> </p>
                         <p>Neutered: <%= pet.neutered  %> </p>
@@ -72,11 +77,15 @@
             
        
                 <section class="pet weight">
-                    <div class="weight__header">
-                        <h3>weight</h3>
+                    <div class="document__header top">
+                        <h3>Weight</h3>
                         <div>
-                            <canvas id="myChart"></canvas>
+                            <a href=""><img src="img/plus.png" alt=""></a>
                         </div>
+                    </div>
+                
+                    <div>
+                        <canvas id="myChart"></canvas>
                     </div>
                 </section>
 

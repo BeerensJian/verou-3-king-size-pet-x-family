@@ -42,15 +42,6 @@
         justify-content: space-between;
     }
 
-    .dots {
-        width: 6px;
-        overflow: hidden;
-        object-fit: cover;
-        img { 
-            width: 100%;
-        } 
-    }
-
     section {
         padding: 40px;
         background-color: #F9F9F9;
@@ -122,4 +113,81 @@
 
 }
 
+.more{
+    font-weight: 600;
+    font-family: var(--text-font);
+    cursor: pointer;
+    position: relative;
+    width: 100px;
+    &__button {
+        text-align: end;
+    }
+    &__img {
+        width: 6px;
+        overflow: hidden;
+        object-fit: cover;
+        img{
+            width: 100%;
+        }
+    }
+    &__content::before{
+        content: "";
+        position: absolute;
+        top: -19px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid var(--white);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+    }
+    &__content {
+        line-height: 2;
+        left: 47px;
+        transition: all 0.3s linear;
+        box-shadow: var(--shadow);
+        border-radius: 20px;
+        padding: 10px 0 15px 0;
+        margin: 10px auto;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        position: absolute;
+        background-color: var(--white);
+        z-index: 1;
+        a{
+            color: black;
+        }
+        button{
+            all: unset;
+        }
+    }
+    .line {
+        margin: auto;
+        position: relative;
+        width: 75px;
+        
+   }
+   .line::before {
+        content: " ";
+        position: absolute;
+        left: calc(50% - 30px);
+        width: 60px;
+        height: 3px;
+        bottom: 0px;
+        border-radius: 20px;
+        transition: transform 0.5s linear;
+        transform-origin: center;
+        transform: scaleX(0);  
+        background-color: var(--middle);
+   }
 
+   .line:hover::before {
+        
+        transform: scaleX(1);  
+        transform-origin: center;
+   }
+}
+.show {
+    opacity: 1;
+}
