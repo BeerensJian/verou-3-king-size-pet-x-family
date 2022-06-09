@@ -81,7 +81,14 @@ router.get("/pet/:id", async (req, res) => {
     const appointments =  await AppointmentModel.find({ petID : req.params.id })
 
     
-    res.render("pet", {pet: pet, allPets : pets, appointments: appointments , showDate: showDate, getGenderIcon : getGenderIcon, isActive : isActive, getTime : getTime})
+    res.render("pet", {pet: pet, 
+        allPets : pets, 
+        appointments: appointments , 
+        showDate: showDate, 
+        getGenderIcon : getGenderIcon, 
+        isActive : isActive, 
+        getTime : getTime
+    })
 })
 
 /* EDIT PET DETAILS */
