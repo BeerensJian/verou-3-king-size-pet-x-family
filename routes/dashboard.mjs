@@ -13,11 +13,21 @@ import flash from 'connect-flash';
 const router = express.Router()
 
 router.get("/", isAuth, async (req, res) => {
-
-    const appointments = await AppointmentModel.find({ ownerID : req.session.ownerID})
+    let twoWeeksFromNow = new Date();
+    twoWeeksFromNow.setDate(twoWeeksFromNow.getDate() + 12)
+    const appointments = await AppointmentModel.find({ ownerID : req.session.ownerID })
     .populate("petID")
     .select("doctor date notes petID")
     .where("date")
+
+    let soonAppointments = []
+    appointments.forEach(app => {
+        const appdate = new Date(app.date)
+        if (appdate < twoWeeksFromNow) {
+            soonAppointments.push(app)
+        }
+    });
+    
     
     const pets = await PetModel.find({ownerID: req.session.ownerID})
     res.render("dashboard", {
@@ -25,7 +35,7 @@ router.get("/", isAuth, async (req, res) => {
         getGenderIcon : getGenderIcon, 
         showAge : showAge, 
         msg : req.flash("msg"), 
-        appointments : appointments, 
+        appointments : soonAppointments, 
         showDate: showDate, 
         getTime : getTime
     });
