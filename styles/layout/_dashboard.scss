@@ -1,23 +1,30 @@
 .dashboard {
-    padding: 50px 20px;
+    width: 100%;
     display: grid;
-    justify-content: space-around;
+    grid-template-columns:  minmax(5px, 1fr) minmax(45%, 350px) minmax(5px, 1fr);
+    grid-template-areas: 
+    'left welcome right'
+    'left notification right'
+    'left pets right';
     gap: 20px;
     background-color: var(--light);
 
     .welcome {
+        grid-area: welcome;
         font: bold 35px var(--title-font);
         color: var(--dark);
         
     }
 
     section {
+        width: 100%;
+        position: relative;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
 
     &__item { 
         border-radius: 30px;
-        min-width: 500px;
+        
         background-color: #F9F9F9; 
     }
 
@@ -47,7 +54,7 @@
     padding: 20px 10px;
     display: grid;
     align-items: center;
-    grid-template-columns: 70px 1fr;
+    grid-template-columns: minmax(30px,70px) 1fr;
     gap: 20px;
     &__img{
         margin: auto;
@@ -97,4 +104,22 @@
     p {
         margin-bottom: 0px;
     }
+}
+
+.notification {
+    margin: 0 0 10px 0 ;
+    padding: 10px 20px;
+    // border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 2px solid var(--middle);
+    span{
+        color: var(--dark);
+    }
+}
+
+.note_dash {
+    grid-area: notification;
+}
+.pet_dash {
+    grid-area: pets;
 }

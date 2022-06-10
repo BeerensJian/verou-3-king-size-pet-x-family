@@ -5,20 +5,20 @@
 
     <p class="welcome">Welcome back!</p>
 
-    <section class="dashboard__item">
+    <section class="dashboard__item note_dash">
         <div class="dashboard__text">
             <h2>Messages</h2>
             <% appointments.forEach(appointment => { %>
                 <div class="notification">
                     
-                    <p>You have an appointment for <%= appointment.petID.name %>  with <%= appointment.doctor %> coming up soon! </p>
+                    <p><span><%= appointment.petID.name %></span> has an appointment with <span>Dr. <%= appointment.doctor %></span>  coming up soon! </p>
                     <p><%= showDate(appointment.date) %>  <%= getTime(appointment.date) %>  </p>
                 </div>
             <% }) %>
         </div> 
     </section>
 
-    <section class="dashboard__item">
+    <section class="dashboard__item pet_dash">
         <div class="dashboard__text">
             <% if (msg.length != 0) { %>
                 <div class="confirmationBox">
