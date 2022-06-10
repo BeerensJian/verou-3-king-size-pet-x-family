@@ -701,11 +701,14 @@ li .nav__button {
   min-height: 80%;
   background-color: var(--light);
 }
-.addpet input {
+.addpet input, .addpet select {
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
   background-color: var(--light);
+}
+.addpet select {
+  width: 100%;
 }
 .addpet__container {
   margin: 0 auto;
