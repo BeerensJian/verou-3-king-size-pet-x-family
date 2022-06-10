@@ -372,7 +372,6 @@ li .nav__button {
   border-radius: 50px;
   overflow: hidden;
   object-fit: cover;
-  box-shadow: var(--shadow);
 }
 .petcard__img img {
   padding: 10px;
@@ -384,10 +383,14 @@ li .nav__button {
 .petcard__extra {
   line-height: 1.2;
 }
+.petcard i {
+  color: var(--middle);
+}
 
 .petcard:hover {
   background-color: var(--light);
   border-radius: 20px;
+  box-shadow: none;
 }
 
 .petcard_container {
@@ -454,7 +457,7 @@ li .nav__button {
   width: 100%;
 }
 .info i {
-  color: var(--dark);
+  color: var(--middle);
   position: relative;
   bottom: 5px;
   font-weight: bold;
@@ -480,6 +483,23 @@ li .nav__button {
 .document {
   width: 100%;
 }
+.document__items {
+  padding: 20px 0 0 0;
+}
+.document__single {
+  display: grid;
+  grid-template-columns: 10% 50% 30% 10%;
+  align-items: center;
+  padding: 0 0 5px 0;
+}
+.document__single span {
+  font-family: var(--text-font);
+  color: var(--middle);
+}
+.document__single i {
+  font-size: 20px;
+  color: var(--dark);
+}
 .document__header div {
   display: flex;
   align-items: center;
@@ -498,10 +518,6 @@ li .nav__button {
   border: 3px solid var(--dark);
   border-radius: 20px;
   padding: 4px 12px;
-}
-
-.appointment {
-  width: 100%;
 }
 
 .weight {
@@ -642,6 +658,22 @@ li .nav__button {
 
 .show {
   opacity: 1;
+}
+
+.appointment {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  grid-template-rows: 32px 32px;
+}
+.appointment__item {
+  color: var(--dark);
+  font-weight: 600;
+}
+.appointment img {
+  position: relative;
+  top: 2px;
+  height: 20px;
+  padding: 0 5px;
 }
 
 .addpet {

@@ -54,7 +54,7 @@
 .info {
     width: 100%;
     i{
-        color: var(--dark);
+        color: var(--middle);
         position: relative;
         bottom: 5px;
         font-weight: bold;
@@ -84,6 +84,25 @@
 
 .document {
     width: 100%;
+    &__items { 
+        padding: 20px 0 0 0;
+    }
+
+    &__single {
+        display: grid;
+        grid-template-columns: 10% 50% 30% 10%;
+        align-items: center;
+        padding: 0 0 5px 0;
+        span {
+            font-family: var(--text-font);
+            color: var(--middle);
+        }
+        i{
+            font-size: 20px;
+            color: var(--dark);
+        }
+       
+    }
     
     &__header {
         div {
@@ -109,11 +128,6 @@
         }
     }
         
-}
-
-.appointment {
-    width: 100%;
-
 }
 
 .weight{ 
@@ -265,4 +279,21 @@
 }
 .show {
     opacity: 1;
+}
+
+.appointment {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: 32px 32px;
+    &__item{
+        color: var(--dark);
+        font-weight: 600;   
+    }
+    img{
+        position: relative;
+        top: 2px;
+        height: 20px;
+        padding: 0 5px;
+    }
+   
 }

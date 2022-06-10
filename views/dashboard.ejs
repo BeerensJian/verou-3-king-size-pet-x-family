@@ -10,7 +10,8 @@
             <h2>Messages</h2>
             <% appointments.forEach(appointment => { %>
                 <div class="notification">
-                    <p>You Have an appointment with <%= appointment.doctor %> coming up soon! </p>
+                    
+                    <p>You have an appointment with <%= appointment.doctor %> coming up soon! </p>
                     <p><%= showDate(appointment.date) %>  <%= getTime(appointment.date) %>  </p>
                 </div>
             <% }) %>

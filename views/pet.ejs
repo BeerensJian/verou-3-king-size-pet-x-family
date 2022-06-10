@@ -53,21 +53,43 @@
                         
                     </div>
                     <div class="document__items">
-                        <p>  <i>icon</i> <a href="">The item</a></p>
+                        <div class="document__single">
+                            <i class="fas fa-file"></i>
+                            <p>Vaccine</p> 
+                            <span class="date_added"> 07.05.2022</span>
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                        <div class="document__single">
+                            <i class="fas fa-file"></i>
+                            <p>Blood analasis</p> 
+                            <span class="date_added"> 14.02.2022</span>
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                        <div class="document__single">
+                            <i class="fas fa-file"></i>
+                            <p>Anual checkup</p> 
+                            <span class="date_added"> 01.09.2021</span>
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                         
                     </div>
                 </section>
 
-                <section class="pet appointment document">
+                <section class="pet document">
                     <div class="document__header top">
                         <h3>Appointments</h3>
                         <div>
                             <a href="/dashboard/appointment/<%= pet.id %>"><img src="img/plus.png" alt=""></a>
                         </div>
                     </div>
-                    <div>
+                    <div class="document__items">
                         <% appointments.forEach(appointment => { %>
                             <div class="appointment">
-                                <p>You have an appointment with <%= appointment.doctor %> on <%= showDate(appointment.date) %> at <%= getTime(appointment.date) %> </p>
+                                <p class="appointment__item">Date</p>
+                                <p><%= showDate(appointment.date) %> <span><img src="img/line3.png" alt=""></span> <%= getTime(appointment.date) %></p>
+                                <p class="appointment__item">Vet</p>
+                                <p><%= appointment.doctor %></p>
+                                
                             </div>
                         <% }); %> 
                     </div>
