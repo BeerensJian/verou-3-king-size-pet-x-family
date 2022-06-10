@@ -1,11 +1,15 @@
 .addpet{    
     min-height: 80%;
     background-color: var(--light);
-    input {
+    input, select {
         border: none;
         border-radius: 10px;
         padding: 10px 20px;
         background-color: var(--light);
+    }
+
+    select {
+        width: 100%;
     }
 
     &__container{
