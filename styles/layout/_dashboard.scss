@@ -95,12 +95,12 @@
 }
 
 .confirmationBox {
-    padding: 5px 20px;
-    background-color: rgba(61, 201, 211, 0.37);
+    padding: 10px 20px;
+    background-color: var(--light);
     text-align: center;
-    border: 1px solid rgb(13, 76, 250);
-    border-radius: 5px;
+    border-radius: 20px;
     margin: 10px 0px;
+    color: var(--dark);
     p {
         margin-bottom: 0px;
     }

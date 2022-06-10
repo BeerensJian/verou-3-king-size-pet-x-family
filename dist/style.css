@@ -401,12 +401,12 @@ li .nav__button {
 }
 
 .confirmationBox {
-  padding: 5px 20px;
-  background-color: rgba(61, 201, 211, 0.37);
+  padding: 10px 20px;
+  background-color: var(--light);
   text-align: center;
-  border: 1px solid rgb(13, 76, 250);
-  border-radius: 5px;
+  border-radius: 20px;
   margin: 10px 0px;
+  color: var(--dark);
 }
 .confirmationBox p {
   margin-bottom: 0px;
@@ -683,7 +683,7 @@ li .nav__button {
 
 .appointment {
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: 30% 60% 10%;
   grid-template-rows: 32px 32px;
 }
 .appointment__item {
@@ -696,7 +696,60 @@ li .nav__button {
   height: 20px;
   padding: 0 5px;
 }
+.appointment button {
+  all: unset;
+  color: var(--dark);
+  font-size: 20px;
+}
+.appointment button i {
+  cursor: pointer;
+  position: relative;
+  left: 5px;
+  top: 5px;
+  height: 20px;
+}
 
+@media (max-width: 768px) {
+  .pet__main {
+    display: inline;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .pet__container {
+    display: grid;
+    justify-items: center;
+    grid-template-areas: "left navi right" "left info right" "left doc right" "left app right" "left weight right";
+  }
+
+  .pet section {
+    margin-bottom: 40px;
+  }
+  .pet nav ul {
+    justify-content: space-around;
+  }
+
+  nav {
+    grid-area: navi;
+  }
+
+  .pet_info {
+    grid-area: info;
+  }
+
+  .pet_doc {
+    grid-area: doc;
+  }
+
+  .pet_app {
+    grid-area: app;
+  }
+
+  .pet_weight {
+    grid-area: weight;
+    max-width: 100%;
+  }
+}
 .addpet {
   min-height: 80%;
   background-color: var(--light);

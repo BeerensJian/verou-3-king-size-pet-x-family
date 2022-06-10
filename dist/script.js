@@ -11,8 +11,8 @@ const labels = [
     labels: labels,
     datasets: [{
       label: 'Weight in KG',
-      backgroundColor: '#A8C98D',
-      borderColor: '#A8C98D',
+      backgroundColor: '#88C443',
+      borderColor: '#88C443',
       data: [3.5, 4, 5, 4, 4.6, 4, 6],
     }]
   };

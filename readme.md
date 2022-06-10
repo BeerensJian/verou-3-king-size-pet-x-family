@@ -16,7 +16,7 @@ You can fidn the live version here:
 ## Roles & Technolegies
 
 **Backend:** [Jian](https://github.com/BeerensJian) (NodeJS, Express)
-**Frontend:** [Sara](https://github.com/Sa-raCha) (SCSS)
+**Frontend:** [Sara](https://github.com/Sa-raCha) (SCSS, JavaScript)
 
 
 ## Progress
@@ -45,7 +45,7 @@ You can fidn the live version here:
 *  **Sara:**
 	*  Translating wireframes into HTML/SCSS
 	*  Splitting up her SCSS into partials
-	*   Finished the Landing,Login & Register page
+	*  Finished the Landing,Login & Register page
 
 ### Week 3 & Week 4:
 * **Jian:** 
@@ -54,5 +54,5 @@ You can fidn the live version here:
 	* Show information about pets
 *  **Sara:**
 	*  Responsiveness
-	*  Layouts and effect for all pages
+	*  Implementing layouts and effect for all pages
 

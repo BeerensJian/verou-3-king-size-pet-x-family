@@ -3,7 +3,7 @@
 
 
 <div class="pet__container">
-    <div class="pet">
+    <div class="pet pet_nav">
         <nav>
             <ul>
                 <% allPets.forEach(petx => { %> 
@@ -15,7 +15,7 @@
 
         <main> 
             <div class="pet__main">
-                <section class="pet info">
+                <section class="pet info pet_info">
                     <div class="top">
                         <div class="info__img">
                             <img src="<%= serveIcon(pet.typeOfAnimal) %>" alt="">
@@ -43,7 +43,7 @@
                     </div>
                 </section>
 
-                <section class="pet document">
+                <section class="pet document pet_doc">
                     <div class="document__header top">
                         <h3>Documents</h3>
                         <div>
@@ -75,7 +75,7 @@
                     </div>
                 </section>
 
-                <section class="pet document">
+                <section class="pet document pet_app">
                     <div class="document__header top">
                         <h3>Appointments</h3>
                         <div>
@@ -85,13 +85,19 @@
                     <div class="document__items">
                         <% appointments.forEach(appointment => { %>
                             <div class="appointment">
-                                <p class="appointment__item">Date</p>
-                                <p><%= showDate(appointment.date) %> <span><img src="img/line3.png" alt=""></span> <%= getTime(appointment.date) %></p>
+                                <div>
+                                    <p class="appointment__item">Date</p>
+                                </div>
+                                <div>
+                                    <p><%= showDate(appointment.date) %> <span><img src="img/line3.png" alt=""></span> <%= getTime(appointment.date) %></p>
+                                </div>
+                                <div>
+                                    <form action="/dashboard/appointment/delete/<%= appointment.id %> " method="post">
+                                        <button><i class="fa-solid fa-xmark"></i></button>
+                                    </form>
+                                </div>
                                 <p class="appointment__item">Vet</p>
                                 <p><%= appointment.doctor %></p>
-                                <form action="/dashboard/appointment/delete/<%= appointment.id %> " method="post">
-                                    <button>❌</button>
-                                </form>
                             </div>
                         <% }); %> 
                     </div>
@@ -99,7 +105,7 @@
             </div>
             
        
-                <section class="pet weight">
+                <section class="pet weight pet_weight">
                     <div class="top">
                         <h3>Weight</h3>
                         
