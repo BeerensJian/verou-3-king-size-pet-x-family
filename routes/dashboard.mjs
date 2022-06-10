@@ -196,13 +196,6 @@ router.post("/appointment/delete/:id", async (req, res) => {
     res.redirect("/dashboard");
 })
 
-
-
-
-
-
-
-
 router.get("/document", (req, res) => {
     res.render("document")
 })
