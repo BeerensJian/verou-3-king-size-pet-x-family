@@ -108,7 +108,7 @@ router.post("/edit/:id", async (req, res) => {
         return res.redirect("/dashboard/edit/" + req.params.id);
     }
     console.log(req.params.id)
-    let pet = await PetModel.findOne({_id : req.params.id})
+    let pet = await PetModel.findOne({_id : req.params.id});
     console.log(pet)
     pet.name = name;
     pet.gender = gender;
@@ -174,7 +174,7 @@ router.post("/appointment/:id",(req, res) => {
 
     const appointment = new AppointmentModel({
         doctor : req.body.doctor,
-        date : addHoursToDate(req.body.appointment_time, 2),
+        date : req.body.appointment_time,
         notes : req.body.notes,
         ownerID : req.session.ownerID,
         petID : req.params.id,
