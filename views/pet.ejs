@@ -89,7 +89,9 @@
                                 <p><%= showDate(appointment.date) %> <span><img src="img/line3.png" alt=""></span> <%= getTime(appointment.date) %></p>
                                 <p class="appointment__item">Vet</p>
                                 <p><%= appointment.doctor %></p>
-                                
+                                <form action="/dashboard/appointment/delete/<%= appointment.id %> " method="post">
+                                    <button>❌</button>
+                                </form>
                             </div>
                         <% }); %> 
                     </div>

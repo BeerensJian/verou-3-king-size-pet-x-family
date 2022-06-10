@@ -50,7 +50,7 @@ router.get("/addpet", isAuth, (req, res) => {
 router.post("/addpet", isAuth, async (req, res) => {
     const {name, gender, birthday, neutered, microshipNr, breed, typeOfAnimal, status} = req.body;
 
-    if (name == "" || gender == "" || birthday == "" || !neutered  || typeOfAnimal == "") {
+    if (name == "" || !gender || birthday == "" || !neutered  || typeOfAnimal == "") {
         req.flash("msg", "Please fill in all the fields");
         return res.redirect("/dashboard/addpet");
     }
@@ -102,8 +102,8 @@ router.get("/edit/:id", async (req, res) => {
 
 router.post("/edit/:id", async (req, res) => {
     const {name, gender, birthday, neutered, microshipNr, breed, typeOfAnimal, status} = req.body;
-    
-    if ( name === "" || birthday == "" || neutered == "" || typeOfAnimal == "" || status == "") {
+    console.log(req.body)
+    if ( name === "" || birthday == "" || !neutered || typeOfAnimal == "" || !gender in req.body) {
         req.flash("msg", "Please fill in all the required fields!");
         return res.redirect("/dashboard/edit/" + req.params.id);
     }
@@ -183,6 +183,26 @@ router.post("/appointment/:id",(req, res) => {
     appointment.save()
     res.redirect(`/dashboard/pet/${req.params.id}`)
 })
+
+router.post("/appointment/delete/:id", async (req, res) => {
+    let app = await AppointmentModel.findOneAndRemove({ _id : req.params.id}).where({ ownerID : req.session.ownerID })
+    console.log(app)
+    if ( app == null ) {
+        req.flash("msg", "something went wrong");
+        return res.redirect("/dashboard");
+    }
+    
+    req.flash("msg", "Appointment removed succesfully")
+    res.redirect("/dashboard");
+})
+
+
+
+
+
+
+
+
 router.get("/document", (req, res) => {
     res.render("document")
 })

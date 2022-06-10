@@ -9,7 +9,6 @@ const petSchema = new Schema({
     gender: {
         type: String,
         enum: ["male", "female"],
-        required: true
     },
     birthday: {
         type: Date,

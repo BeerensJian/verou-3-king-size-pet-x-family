@@ -3,7 +3,7 @@ const showDate = (date) => {
     const day = date.getDate();
     const year = date.getFullYear();
 
-    return `${day}-${month}-${year}`;
+    return `${day}.${month}.${year}`;
 }
 
 const getTime = (date) => {
