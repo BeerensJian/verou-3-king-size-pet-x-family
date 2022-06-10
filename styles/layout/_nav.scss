@@ -33,3 +33,28 @@
     }
     
 }
+
+@media (max-width: 500px) {
+    .nav{
+        &__logo {
+            text-align: center;
+            height: auto;
+            padding: 35px 0 10px 0;
+            max-width: 130px;
+        }
+
+        &__list {
+            width: 90%;
+        }
+        li &__button {
+            color: white;
+            background-color: var(--middle);
+            padding: 5px 15px ;
+            border-radius: 50px;
+            
+        }
+
+            
+    }
+        
+}
