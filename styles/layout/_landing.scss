@@ -52,3 +52,14 @@
         width: 100%;
     }
 }
+
+@media (max-width: 500px) {
+    .into {
+        h2 {
+            font-size: 25px;
+        } 
+        p{
+            font-size: 18px;
+        }
+    }
+}

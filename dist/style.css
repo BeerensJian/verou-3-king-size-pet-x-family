@@ -127,6 +127,23 @@ li .nav__button {
   margin-left: 15px;
 }
 
+@media (max-width: 500px) {
+  .nav__logo {
+    text-align: center;
+    height: auto;
+    padding: 35px 0 10px 0;
+    max-width: 130px;
+  }
+  .nav__list {
+    width: 90%;
+  }
+  li .nav__button {
+    color: white;
+    background-color: var(--middle);
+    padding: 5px 15px;
+    border-radius: 50px;
+  }
+}
 .container {
   width: 80%;
   margin: auto;
@@ -177,6 +194,14 @@ li .nav__button {
   width: 100%;
 }
 
+@media (max-width: 500px) {
+  .into h2 {
+    font-size: 25px;
+  }
+  .into p {
+    font-size: 18px;
+  }
+}
 .login__logo {
   max-width: 250px;
   margin: auto;
@@ -720,7 +745,7 @@ li .nav__button {
   height: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .pet__main {
     display: inline;
     height: 100%;
