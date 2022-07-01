@@ -4,7 +4,7 @@
 This is a team project we came up with for an assignment @ becode.
 We decided on creating a platform that makes it easy to manage your pet’s health by putting all of their necessary information in one place.
 
-You can fidn the live version here: 
+You can find the live version here: [PetXFamily](https://petfamily-platform.herokuapp.com/)
 
 ## Main Features
 
